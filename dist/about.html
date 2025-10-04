@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About Us — 2C Destiny</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Framed heading */
+      .about-frame{display:inline-block;padding:1rem 1.25rem;border-radius:12px;background:linear-gradient(180deg, rgba(91,33,182,0.08), rgba(124,58,237,0.04));border:1px solid rgba(91,33,182,0.12)}
+      .about-frame h1{margin:0;color:var(--brand-700)}
+    </style>
+  </head>
+  <body data-page="about" class="min-h-screen bg-slate-50 text-slate-900">
+
+    <a href="#main" class="sr-only focus:not-sr-only" style="position:absolute;left:10px;top:10px;background:#fff;padding:6px 8px;border-radius:6px;">Skip to main content</a>
+
+  <!-- Standard header: consistent across site -->
+  <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+      <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
+        <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
+        <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
+        <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Pillars</a>
+        <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Signature Programs</a>
+        <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Fatherhood</a>
+        <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Contact</a>
+        <a data-nav-page="donate" href="donate.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Donate</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md text-gray-700 hover:bg-gray-50">Menu</button>
+      </div>
+    </div>
+    <div id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
+      <nav class="px-4 py-4 space-y-2">
+        <a href="about.html" class="block text-gray-700">About</a>
+        <a href="meet-the-team.html" class="block text-gray-700">Meet the team</a>
+        <a href="pillars.html" class="block text-gray-700">Pillars</a>
+        <a href="signature-programs.html" class="block text-gray-700">Signature Programs</a>
+        <a href="fatherhood.html" class="block text-gray-700">Fatherhood</a>
+        <a href="contact.html" class="block text-gray-700">Contact</a>
+        <a href="donate.html" class="block text-gray-700">Donate</a>
+      </nav>
+    </div>
+
+    <main id="main" class="py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <div class="about-frame mx-auto">
+            <h1 class="text-4xl font-extrabold">About Us</h1>
+          </div>
+          <p class="mt-4 text-slate-600 max-w-2xl mx-auto">We partner with organizations and communities to build capacity, strengthen practice, and expand opportunity.</p>
+        </div>
+
+        <!-- What Sets Us Apart -->
+        <section class="mb-12">
+          <h2 class="text-2xl font-bold text-violet-900 mb-6">What Sets Us Apart</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <article class="collapsible-card">
+              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-exp">
+                <span><h3 class="text-xl font-bold text-brand-purple">Decades of Experience</h3></span>
+                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="c-exp" class="collapsible-content mt-3 text-slate-700">
+                <p>Program and operations leadership across public, nonprofit, and community-based sectors.</p>
+              </div>
+            </article>
+
+            <article class="collapsible-card">
+              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-train">
+                <span><h3 class="text-xl font-bold text-brand-purple">Interactive Training</h3></span>
+                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="c-train" class="collapsible-content mt-3 text-slate-700">
+                <p>Scenario-based, practitioner-led training that builds real-world skills and confidence.</p>
+              </div>
+            </article>
+
+            <article class="collapsible-card">
+              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-support">
+                <span><h3 class="text-xl font-bold text-brand-purple">Support & Tools</h3></span>
+                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="c-support" class="collapsible-content mt-3 text-slate-700">
+                <p>Implementation support, playbooks, and fidelity tools that ensure quality and sustainability.</p>
+              </div>
+            </article>
+
+            <article class="collapsible-card">
+              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-inclusive">
+                <span><h3 class="text-xl font-bold text-brand-purple">Inclusive & Informed</h3></span>
+                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="c-inclusive" class="collapsible-content mt-3 text-slate-700">
+                <p>Trauma-responsive, culturally grounded, and strengths-based—co-designed with communities.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Our Commitments -->
+        <section>
+          <h2 class="text-2xl font-bold text-violet-900 mb-6">Our Commitments</h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <article class="collapsible-card">
+              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-fam">
+                <span><h3 class="text-xl font-bold text-brand-purple">Families & Communities</h3></span>
+                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="c-fam" class="collapsible-content mt-3 text-slate-700">
+                <p>We champion stability, belonging, and opportunity so households and neighborhoods can thrive.</p>
+              </div>
+            </article>
+
+            <article class="collapsible-card">
+              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-equity">
+                <span><h3 class="text-xl font-bold text-brand-purple">Equity & Inclusion</h3></span>
+                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="c-equity" class="collapsible-content mt-3 text-slate-700">
+                <p>We uphold dignity, inclusion, and equitable access to resources and services.</p>
+              </div>
+            </article>
+
+            <article class="collapsible-card">
+              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-learning">
+                <span><h3 class="text-xl font-bold text-brand-purple">Learning & Improvement</h3></span>
+                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="c-learning" class="collapsible-content mt-3 text-slate-700">
+                <p>We leverage data-informed learning and continuous improvement to strengthen practices and systems.</p>
+              </div>
+            </article>
+
+            <article class="collapsible-card">
+              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-integrity">
+                <span><h3 class="text-xl font-bold text-brand-purple">Integrity & Ethics</h3></span>
+                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <div id="c-integrity" class="collapsible-content mt-3 text-slate-700">
+                <p>We commit to ethics, confidentiality, and rigorous quality assurance in all we do.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="site-footer" style="background:var(--brand-900); color:#f8fafc; padding:2rem 0;">
+      <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;justify-content:space-between;">
+          <div style="max-width:40rem">
+            <a href="index.html" class="logo" style="color:#fff;font-weight:700;font-size:1.1rem">2C Destiny</a>
+            <p style="margin-top:0.5rem;color:rgba(248,250,252,0.9)">Empowering families and community partners through programs and training.</p>
+          </div>
+
+          <div style="min-width:220px">
+            <h4 style="margin:0 0 .5rem 0;font-weight:700">Contact</h4>
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;color:rgba(248,250,252,0.95)">
+              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19 19 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.06.35 2.09.69 3.06a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.97.34 2 .57 3.06.69A2 2 0 0 1 22 16.92z"/></svg><a href="tel:3524809223" style="color:inherit;text-decoration:none">352-480-9223</a></li>
+              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:info@2cdestiny.org" style="color:inherit;text-decoration:none">info@2cdestiny.org</a></li>
+              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</span></li>
+            </ul>
+            <p style="margin-top:.75rem;font-size:.9rem;color:rgba(248,250,252,0.8)">2C Destiny is a 501 (c) 3 organization</p>
+          </div>
+        </div>
+        <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:1rem;padding-top:1rem;text-align:center;font-size:.9rem;color:rgba(248,250,252,0.7)">&copy; 2025 2C Destiny. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script>
+      // mobile nav toggle
+      (function(){
+        var toggle = document.getElementById('mobile-menu-toggle');
+        var mobileNav = document.getElementById('mobile-nav');
+        var iconOpen = document.getElementById('icon-open');
+        var iconClose = document.getElementById('icon-close');
+        if(toggle && mobileNav){
+          toggle.addEventListener('click', function(){
+            var hidden = mobileNav.classList.toggle('hidden');
+            toggle.setAttribute('aria-expanded', String(!hidden));
+            iconOpen.classList.toggle('hidden'); iconClose.classList.toggle('hidden');
+          });
+        }
+
+        // collapsible toggles with keyboard support
+        document.addEventListener('DOMContentLoaded', function(){
+          document.querySelectorAll('.collapsible-toggle').forEach(function(btn){
+            // make button keyboard-friendly
+            btn.setAttribute('role','button');
+            btn.tabIndex = 0;
+            function toggleTarget(){
+              var targetId = btn.getAttribute('aria-controls');
+              var content = document.getElementById(targetId);
+              if(!content) return;
+              var isOpen = content.classList.contains('show');
+              if(!isOpen){ content.classList.add('show'); btn.setAttribute('aria-expanded','true'); }
+              else { content.classList.remove('show'); btn.setAttribute('aria-expanded','false'); }
+            }
+            btn.addEventListener('click', toggleTarget);
+            btn.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggleTarget(); } });
+          });
+        });
+      })();
+    </script>
+
+  </body>
+</html>
