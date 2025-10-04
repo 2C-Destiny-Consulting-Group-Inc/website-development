@@ -1,0 +1,9 @@
+{
+  "name": "2c-destiny-site",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "preview": "python3 -m http.server 8080"
+  }
+}

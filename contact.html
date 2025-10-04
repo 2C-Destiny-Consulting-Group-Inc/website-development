@@ -166,7 +166,7 @@
         <ul class="space-y-2 text-sm text-slate-300">
           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="fatherhood.html" class="hover:text-white transition-colors">Fatherhood</a></li>
-          <li><a href="programs.html" class="hover:text-white transition-colors">Programs</a></li>
+          <li><a href="signature-programs.html" class="hover:text-white transition-colors">Signature Programs</a></li>
           <li><a href="pillars.html" class="hover:text-white transition-colors">Pillars</a></li>
           <li><a href="meet-the-team.html" class="hover:text-white transition-colors">Team</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
@@ -192,7 +192,7 @@
     if(toggle && mobileNav){
       toggle.addEventListener('click', function(){ mobileNav.classList.toggle('hidden'); toggle.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden'))); });
     }
-    try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"];'); if(!el){ el=document.querySelector('a[data-nav-page="'+page+'"]'); } if(el) el.classList.add('font-semibold'); } }catch(e){}
+    try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"]'); if(el) el.classList.add('font-semibold'); } }catch(e){}
   })();
 </script>
 
