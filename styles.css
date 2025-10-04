@@ -1,0 +1,189 @@
+/* 2C Destiny Consulting Group - Global Styles */
+
+/* Color Variables */
+:root {
+  /* Brand colors - purple/violet palette */
+  --brand-900: #2a0b45;
+  --brand-800: #3b176e;
+  --brand-700: #5b21b6;
+  --brand-600: #6d28d9;
+  --brand-500: #7c3aed;
+  --brand-200: #c7b3f5;
+  
+  /* Primary colors */
+  --primary: #5b21b6;
+  --accent: #8b5cf6;
+  
+  /* Violet colors (used in some pages) */
+  --violet-900: #3b0764;
+  --violet-700: #6d28d9;
+  --violet-600: #7c3aed;
+  --violet-500: #7c3aed;
+  
+  /* Surface and neutral colors */
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --white: #ffffff;
+}
+
+/* Base styles */
+body {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header styles */
+.site-header {
+  background: linear-gradient(180deg, rgba(91, 33, 182, 0.04), rgba(139, 92, 246, 0.02));
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+/* Navigation styles */
+.site-nav a {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-nav a:hover {
+  color: var(--primary);
+}
+
+.site-nav a.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Logo styles */
+.logo {
+  font-weight: 700;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 1.15rem;
+  letter-spacing: 0.2px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mini-logo {
+  height: 2rem;
+  width: auto;
+}
+
+/* Footer styles */
+.site-footer {
+  background: var(--brand-900);
+  color: #f8fafc;
+  padding: 2rem 0;
+}
+
+.site-footer a {
+  color: rgba(248, 250, 252, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.site-footer a:hover {
+  color: #ffffff;
+}
+
+/* Collapsible card styles */
+.collapsible-card {
+  background: white;
+  border: 1px solid rgba(91, 33, 182, 0.08);
+  border-radius: 12px;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.collapsible-card:hover {
+  border-color: rgba(91, 33, 182, 0.16);
+  box-shadow: 0 4px 12px rgba(91, 33, 182, 0.08);
+}
+
+.collapsible-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.collapsible-toggle:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.collapsible-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.collapsible-content.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Chevron animation for collapsibles */
+.collapsible-toggle .chev {
+  transition: transform 0.3s ease;
+}
+
+.collapsible-toggle[aria-expanded="true"] .chev {
+  transform: rotate(90deg);
+}
+
+/* Text color utilities */
+.text-brand-purple {
+  color: var(--brand-700);
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.sr-only:focus-visible,
+.focus\:not-sr-only:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: inherit;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+/* Hidden utility */
+.hidden {
+  display: none;
+}
