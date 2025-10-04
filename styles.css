@@ -1,0 +1,38 @@
+:root{
+  --primary:#5b21b6;
+  --brand-900:#2a0b45;
+  --brand-800:#4b1f7a;
+  --brand-700:#7c3aed;
+  --brand-600:#6d28d9;
+  --brand-500:#a78bfa;
+  --brand-400:#c4b5fd;
+  --brand-300:#ddd6fe;
+  --muted:#64748b;
+  --text:#0f172a;
+  --surface:#ffffff;
+}
+
+html,body{
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color: var(--text);
+}
+
+/* Minimal Tailwind-like helpers so headers/navs render acceptably without CDN */
+.hidden{display:none!important}
+@media (min-width:768px){
+  .md\:hidden{display:none!important}
+  .md\:flex{display:flex!important}
+}
+
+/* Active nav styling (desktop and mobile) */
+nav a.active,[aria-current="page"]{color:var(--brand-900)!important;font-weight:700}
+#mobile-nav a.active{background:rgba(124,58,237,0.06);color:var(--brand-700);font-weight:600}
+
+/* Simple container helper used on some pages */
+.container{max-width:1100px;margin:0 auto;padding:0 1rem}
+
+/* Buttons used on non-Tailwind pages */
+.btn{display:inline-block;background:linear-gradient(90deg,var(--brand-700),var(--brand-500));color:#fff;text-decoration:none;padding:.55rem .9rem;border-radius:.5rem}
+
+/* Footer base */
+.site-footer{background:var(--brand-900);color:#f8fafc}

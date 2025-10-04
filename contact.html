@@ -3,9 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Contact 2C Destiny — reach us for training, consultation, and partnership opportunities." />
   <title>Contact | 2-C Destiny Consulting Group</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="site.js" defer></script>
   <style>
     :root{--violet-900:#3b0764;--violet-700:#6d28d9;--violet-500:#7c3aed}
     .gradient-accent{
@@ -155,7 +158,7 @@
     <div class="grid md:grid-cols-4 gap-8">
       <div class="md:col-span-2">
         <div class="flex items-center gap-3 mb-4">
-          <img src="2c-destiny-logo.png" alt="2-C Destiny logo" class="h-8 w-auto" />
+          <img src="images/placeholder.svg" alt="2-C Destiny logo" class="h-8 w-auto" />
           <span class="font-semibold text-lg">2-C Destiny Consulting Group</span>
         </div>
         <p class="text-slate-300 mb-4 max-w-md">Empowering organizations through evidence-based training, collaborative practice, and effective leadership.</p>
@@ -166,7 +169,7 @@
         <ul class="space-y-2 text-sm text-slate-300">
           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="fatherhood.html" class="hover:text-white transition-colors">Fatherhood</a></li>
-          <li><a href="programs.html" class="hover:text-white transition-colors">Programs</a></li>
+          <li><a href="signature-programs.html" class="hover:text-white transition-colors">Signature Programs</a></li>
           <li><a href="pillars.html" class="hover:text-white transition-colors">Pillars</a></li>
           <li><a href="meet-the-team.html" class="hover:text-white transition-colors">Team</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
@@ -192,7 +195,7 @@
     if(toggle && mobileNav){
       toggle.addEventListener('click', function(){ mobileNav.classList.toggle('hidden'); toggle.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden'))); });
     }
-    try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"];'); if(!el){ el=document.querySelector('a[data-nav-page="'+page+'"]'); } if(el) el.classList.add('font-semibold'); } }catch(e){}
+    try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"]'); if(el) el.classList.add('font-semibold'); } }catch(e){}
   })();
 </script>
 
