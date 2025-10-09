@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="land-title land-desc">
+  <title id="land-title">Community impact placeholder</title>
+  <desc id="land-desc">Soft gradient landscape with abstract shapes representing community connections.</desc>
+  <defs>
+    <linearGradient id="land-bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ede9fe" />
+      <stop offset="100%" stop-color="#c4b5fd" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#land-bg)" />
+  <g fill="none" stroke="#7c3aed" stroke-width="6" opacity="0.2">
+    <path d="M80 620 C260 520 420 520 620 640 S1000 780 1140 600" />
+    <path d="M160 520 C320 420 520 420 720 540 S1040 700 1160 520" />
+  </g>
+  <g fill="#5b21b6" opacity="0.15">
+    <circle cx="300" cy="260" r="140" />
+    <circle cx="520" cy="180" r="110" />
+    <circle cx="860" cy="260" r="160" />
+  </g>
+  <text x="50%" y="55%" text-anchor="middle" fill="#4c1d95" font-family="'Inter', sans-serif" font-size="56" font-weight="700" opacity="0.4">
+    2C Destiny Programs
+  </text>
+</svg>

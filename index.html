@@ -5,41 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>2C Destiny Consulting Group</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <style>
-    /* Subtle, refined palette: softer indigo and warm neutrals */
-    :root{
-      /* Slightly more plum / violet palette (muted) */
-      --primary:#5b21b6; /* deeper plum */
-      --accent:#8b5cf6;  /* soft lavender accent */
-      --muted:#6b7280;
-      --white:#ffffff;
-    }
-    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,Arial;margin:0;color:#0f172a;background:#fff}
-    .quote-font{font-family:'Playfair Display',serif}
-  /* A muted plum-to-lavender gradient: richer hue but lowered opacity so it stays refined */
-  .subtle-hero{background:linear-gradient(135deg, rgba(91,33,182,0.88), rgba(139,92,246,0.80));}
-  .btn-soft{background:rgba(255,255,255,0.92);color:var(--primary);padding:.68rem 1.05rem;border-radius:10px;text-decoration:none;font-weight:600}
-  .btn-ghost-soft{border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.95);padding:.6rem 1rem;border-radius:10px;text-decoration:none}
-  /* Primary filled CTA used across the hero and key CTAs on the index page */
-  .btn-primary{background:var(--primary);color:var(--white);padding:.68rem 1.05rem;border-radius:10px;text-decoration:none;font-weight:600;display:inline-block}
-  .btn-primary:hover{filter:brightness(1.05)}
-    /* Core-value icon color (uniform orange for visibility) */
-    :root { --cv-icon: #fb923c; }
-    .cv-icon { color: var(--cv-icon); width:48px; height:48px; display:inline-block; }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
 </head>
   <body class="bg-white text-gray-900" data-page="home">
+  <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Header / Navigation (muted tint to match site palette) -->
-  <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-  <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="brand" aria-label="2C Destiny Consulting Group">2C DESTINY CONSULTING GROUP</a>
       <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
         <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
         <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
         <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Pillars</a>
-  <!-- Programs link removed per request; Signature Programs remains on other pages -->
         <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Signature Programs</a>
         <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Fatherhood</a>
         <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Contact</a>
@@ -54,7 +34,6 @@
         <a href="about.html" class="block text-gray-700">About</a>
         <a href="meet-the-team.html" class="block text-gray-700">Meet the team</a>
         <a href="pillars.html" class="block text-gray-700">Pillars</a>
-  <!-- Programs link removed from mobile nav to avoid duplication -->
         <a href="signature-programs.html" class="block text-gray-700">Signature Programs</a>
         <a href="fatherhood.html" class="block text-gray-700">Fatherhood</a>
         <a href="contact.html" class="block text-gray-700">Contact</a>
@@ -63,6 +42,7 @@
     </div>
   </header>
 
+  <main id="main">
   <!-- Hero -->
   <section class="subtle-hero text-white min-h-screen flex items-center justify-center px-6 py-20">
     <div class="max-w-6xl mx-auto w-full lg:flex lg:items-center lg:gap-12">
@@ -80,8 +60,8 @@
 
       <!-- right: strategic visual card (shown on lg+) -->
       <div class="hero-visual hidden lg:block lg:w-1/2">
-        <figure class="visual-card" role="img" aria-label="To a brighter future sign">
-          <img src="to-a-brighter-future.jpg" alt="To a brighter future? sign" loading="lazy" decoding="async" width="1200" height="675">
+        <figure class="visual-card" role="img" aria-label="Community members celebrating success">
+          <img src="images/placeholder-hero.svg" alt="Abstract illustration representing thriving families and communities" loading="lazy" decoding="async" width="1200" height="675">
         </figure>
       </div>
 
@@ -169,35 +149,40 @@
     </div>
   </section>
 
-  <!-- Footer (toned-down plum gradient matching other pages) -->
-  <footer style="background:linear-gradient(180deg, rgba(91,33,182,0.86), rgba(139,92,246,0.72)); color:rgba(255,255,255,0.95); padding:2.25rem 0; margin-top:2.5rem">
-    <div class="max-w-7xl mx-auto px-4" style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap">
-      <div style="max-width:60%">
-        <strong>2C Destiny Consulting Group</strong>
-        <p style="margin:.5rem 0;color:rgba(255,255,255,0.9)">Empowering families and community partners through programs, training, and leadership development.</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-3">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="images/logo-mark.svg" alt="2C Destiny Consulting Group" class="h-10 w-auto" loading="lazy">
+            <span class="font-semibold text-lg">2C Destiny Consulting Group</span>
+          </div>
+          <p class="mt-4 text-slate-200 max-w-md">Empowering families and community partners through programs, training, and leadership development.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-white mb-3">Quick links</h3>
+          <ul class="space-y-2 text-sm text-slate-200">
+            <li><a data-nav-page="about" href="about.html" class="hover:text-white transition-colors">About</a></li>
+            <li><a data-nav-page="pillars" href="pillars.html" class="hover:text-white transition-colors">Pillars</a></li>
+            <li><a data-nav-page="programs" href="signature-programs.html" class="hover:text-white transition-colors">Signature Programs</a></li>
+            <li><a data-nav-page="fatherhood" href="fatherhood.html" class="hover:text-white transition-colors">Fatherhood</a></li>
+            <li><a data-nav-page="team" href="meet-the-team.html" class="hover:text-white transition-colors">Meet the team</a></li>
+            <li><a data-nav-page="contact" href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-white mb-3">Connect</h3>
+          <ul class="space-y-2 text-sm text-slate-200">
+            <li><a href="tel:3524809223" class="hover:text-white transition-colors">📞 352-480-9223</a></li>
+            <li><a href="mailto:info@2cdestiny.org" class="hover:text-white transition-colors">✉️ info@2cdestiny.org</a></li>
+            <li>📍 P.O. BOX 772862<br>4545 SW 60th Ave.<br>Ocala, FL 34474-4301</li>
+          </ul>
+        </div>
       </div>
-      <div style="min-width:220px;color:rgba(255,255,255,0.95)">
-        <div style="font-weight:700;margin-bottom:.4rem">Contact</div>
-          <div>📞 <a href="tel:3524809223" style="color:inherit;text-decoration:none">352-480-9223</a></div>
-        <div>✉️ <a href="mailto:info@2cdestiny.org" style="color:inherit;text-decoration:none">info@2cdestiny.org</a></div>
-        <div style="margin-top:.4rem">P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</div>
-      </div>
+      <div class="footer-meta">&copy; 2025 2C Destiny Consulting Group. All rights reserved.</div>
     </div>
-    <div style="text-align:center;margin-top:1rem;opacity:.95;color:rgba(255,255,255,0.9)">&copy; 2025 2C Destiny Consulting Group. All rights reserved.</div>
   </footer>
-
-  <script>
-    // mobile menu toggle
-    (function(){
-      var toggle = document.getElementById('mobile-menu-toggle');
-      var mobileNav = document.getElementById('mobile-nav');
-      if(toggle && mobileNav){
-        toggle.addEventListener('click', function(){ mobileNav.classList.toggle('hidden'); toggle.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden'))); });
-      }
-      // mark active nav link if matches body data-page
-      try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"]'); if(el) el.classList.add('font-semibold'); } }catch(e){}
-    })();
-  </script>
-
 </body>
 </html>

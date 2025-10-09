@@ -6,6 +6,8 @@
   <title>Contact | 2-C Destiny Consulting Group</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
   <style>
     :root{--violet-900:#3b0764;--violet-700:#6d28d9;--violet-500:#7c3aed}
     .gradient-accent{
@@ -19,10 +21,12 @@
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased" data-page="contact">
 
+<a href="#main" class="skip-link">Skip to main content</a>
+
 <!-- Header (canonical, matches index.html structure and placement) -->
-<header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-    <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.05rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
+<header class="site-header">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+    <a href="index.html" class="brand" aria-label="2C Destiny Consulting Group">2C DESTINY CONSULTING GROUP</a>
     <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
       <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
       <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
@@ -139,7 +143,7 @@
         <div class="mt-6">
           <div class="bg-white border rounded-2xl overflow-hidden shadow-sm">
             <a href="https://www.google.com/maps/search/4545+SW+60th+Ave+Ocala+FL" target="_blank" rel="noopener noreferrer" class="block">
-              <img src="photo-1544027993-37dbfe43562a.avif" alt="Map preview" class="w-full h-48 object-cover" />
+              <img src="images/contact-map.svg" alt="Stylized map of Ocala, Florida" class="w-full h-48 object-cover" />
             </a>
             <div class="p-3 text-xs text-slate-600">Open in <a class="text-[var(--violet-700)]" href="https://www.google.com/maps/search/4545+SW+60th+Ave+Ocala+FL" target="_blank" rel="noopener">Google Maps</a></div>
           </div>
@@ -150,51 +154,39 @@
 </main>
 
 <!-- Footer -->
-<footer class="bg-slate-900 text-white mt-12">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-    <div class="grid md:grid-cols-4 gap-8">
-      <div class="md:col-span-2">
-        <div class="flex items-center gap-3 mb-4">
-          <img src="2c-destiny-logo.png" alt="2-C Destiny logo" class="h-8 w-auto" />
-          <span class="font-semibold text-lg">2-C Destiny Consulting Group</span>
+<footer class="site-footer mt-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid gap-8 md:grid-cols-3">
+      <div>
+        <div class="flex items-center gap-3">
+          <img src="images/logo-mark.svg" alt="2C Destiny Consulting Group" class="h-10 w-auto" loading="lazy">
+          <span class="font-semibold text-lg">2C Destiny Consulting Group</span>
         </div>
-        <p class="text-slate-300 mb-4 max-w-md">Empowering organizations through evidence-based training, collaborative practice, and effective leadership.</p>
-        <p class="text-xs text-slate-500">© 2025 2-C Destiny Consulting Group. All rights reserved.</p>
+        <p class="mt-4 text-slate-200 max-w-md">Empowering organizations through evidence-based training, collaborative practice, and effective leadership.</p>
       </div>
       <div>
-        <h3 class="font-semibold mb-4">Navigate</h3>
-        <ul class="space-y-2 text-sm text-slate-300">
-          <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
-          <li><a href="fatherhood.html" class="hover:text-white transition-colors">Fatherhood</a></li>
-          <li><a href="programs.html" class="hover:text-white transition-colors">Programs</a></li>
-          <li><a href="pillars.html" class="hover:text-white transition-colors">Pillars</a></li>
-          <li><a href="meet-the-team.html" class="hover:text-white transition-colors">Team</a></li>
-          <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+        <h3 class="font-semibold text-white mb-3">Navigate</h3>
+        <ul class="space-y-2 text-sm text-slate-200">
+          <li><a data-nav-page="about" href="about.html" class="hover:text-white transition-colors">About</a></li>
+          <li><a data-nav-page="programs" href="signature-programs.html" class="hover:text-white transition-colors">Signature Programs</a></li>
+          <li><a data-nav-page="fatherhood" href="fatherhood.html" class="hover:text-white transition-colors">Fatherhood</a></li>
+          <li><a data-nav-page="pillars" href="pillars.html" class="hover:text-white transition-colors">Pillars</a></li>
+          <li><a data-nav-page="team" href="meet-the-team.html" class="hover:text-white transition-colors">Team</a></li>
+          <li><a data-nav-page="contact" href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="font-semibold mb-4">Contact</h3>
-        <ul class="space-y-2 text-sm text-slate-300">
-          <li>📞 +1 (352) 480-9223</li>
-          <li>✉️ info@2cdestiny.org</li>
+        <h3 class="font-semibold text-white mb-3">Connect</h3>
+        <ul class="space-y-2 text-sm text-slate-200">
+          <li><a href="tel:+13524809223" class="hover:text-white transition-colors">📞 +1 (352) 480-9223</a></li>
+          <li><a href="mailto:info@2cdestiny.org" class="hover:text-white transition-colors">✉️ info@2cdestiny.org</a></li>
           <li>📍 P.O. BOX 772862 · 4545 SW 60th Ave., Ocala, FL 34474‑4301</li>
         </ul>
       </div>
     </div>
+    <div class="footer-meta">© 2025 2C Destiny Consulting Group. All rights reserved.</div>
   </div>
 </footer>
-
-<script>
-  // mobile menu toggle and active nav marking (same logic as index.html)
-  (function(){
-    var toggle = document.getElementById('mobile-menu-toggle');
-    var mobileNav = document.getElementById('mobile-nav');
-    if(toggle && mobileNav){
-      toggle.addEventListener('click', function(){ mobileNav.classList.toggle('hidden'); toggle.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden'))); });
-    }
-    try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"];'); if(!el){ el=document.querySelector('a[data-nav-page="'+page+'"]'); } if(el) el.classList.add('font-semibold'); } }catch(e){}
-  })();
-</script>
 
 </body>
 </html>

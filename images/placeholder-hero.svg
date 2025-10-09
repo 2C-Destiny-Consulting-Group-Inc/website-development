@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Community collaboration illustration</title>
+  <desc id="desc">Abstract gradient background with overlapping shapes in purple and magenta hues.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#5b21b6" />
+      <stop offset="50%" stop-color="#7c3aed" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <circle cx="350" cy="200" r="220" fill="rgba(236,233,254,0.18)" />
+  <circle cx="1280" cy="240" r="260" fill="rgba(249,168,212,0.12)" />
+  <circle cx="820" cy="620" r="320" fill="rgba(255,255,255,0.08)" />
+  <circle cx="780" cy="480" r="360" fill="url(#glow)" />
+  <path d="M0 540 Q400 440 800 560 T1600 500 L1600 900 L0 900 Z" fill="rgba(15,23,42,0.1)" />
+</svg>

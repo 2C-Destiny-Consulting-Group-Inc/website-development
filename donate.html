@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Donate — 2C Destiny</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
- </head>
-  <body data-page="donate">
-  <!-- Standard header: consistent across site -->
-  <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-      <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
+  <script src="site.js" defer></script>
+</head>
+<body data-page="donate" class="bg-slate-50 text-slate-900">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="brand" aria-label="2C Destiny Consulting Group">2C DESTINY CONSULTING GROUP</a>
       <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
         <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
         <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
@@ -35,124 +39,89 @@
         <a href="donate.html" class="block text-gray-700">Donate</a>
       </nav>
     </div>
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Donate — 2C Destiny</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-      .donation-tiers{display:grid;grid-template-columns:1fr;gap:1rem}
-      @media(min-width:900px){.donation-tiers{grid-template-columns:repeat(3,1fr)}}
-      .tier{padding:1rem;border-radius:10px;border:1px solid rgba(91,33,182,0.06);background:var(--surface);text-align:center}
-      .tier-amount{font-size:1.5rem;font-weight:700;color:var(--brand-700)}
-    </style>
-  </head>
-  <body data-page="donate">
+  </header>
 
-    <header class="site-header">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="h-16 flex items-center justify-between">
-          <a class="logo flex items-center gap-3" href="index.html"><img src="/logo.svg" alt="2C Destiny logo" class="mini-logo"/>2C Destiny</a>
-          <nav class="site-nav hidden md:flex items-center gap-6" aria-label="Main navigation">
-            <a data-nav-page="about" href="about.html">About</a>
-            <a data-nav-page="team" href="meet-the-team.html">Meet the team</a>
-            <a data-nav-page="pillars" href="pillars.html">Pillars</a>
-            <a data-nav-page="programs" href="programs.html">Signature Programs</a>
-            <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
-            <a data-nav-page="contact" href="contact.html">Contact</a>
-            <a data-nav-page="donate" class="donate" href="donate.html">Donate</a>
-          </nav>
-          <div class="md:hidden">
-            <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md text-slate-700 hover:bg-slate-100">
-              <svg id="icon-open" class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-              <svg id="icon-close" class="h-6 w-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
-            </button>
-          </div>
+  <main id="main" class="bg-slate-50">
+    <section class="bg-white py-16 border-b border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl font-bold text-[var(--primary)] mb-4">Support 2C Destiny</h1>
+        <p class="text-lg text-slate-600">Your gift helps families access coaching, training, and evidence-informed services. Every contribution fuels trauma-responsive, community-driven support.</p>
+        <div class="mt-6 flex justify-center gap-4 flex-wrap">
+          <a href="#donation-tiers" class="btn-primary">View donation tiers</a>
+          <a href="mailto:info@2cdestiny.org" class="btn-outline">Discuss partnerships</a>
         </div>
       </div>
-    </header>
+    </section>
 
-    <div id="mobile-nav" class="md:hidden hidden bg-white border-b border-slate-200">
-      <nav aria-label="Mobile primary" class="px-4 py-4 space-y-2">
-        <a data-nav-page="about" href="about.html" class="block text-slate-700 px-2 py-2 rounded hover:bg-slate-50">About</a>
-        <a data-nav-page="team" href="meet-the-team.html" class="block text-slate-700 px-2 py-2 rounded hover:bg-slate-50">Meet the team</a>
-        <a data-nav-page="pillars" href="pillars.html" class="block text-slate-700 px-2 py-2 rounded hover:bg-slate-50">Pillars</a>
-  <a data-nav-page="programs" href="programs.html" class="block text-slate-700 px-2 py-2 rounded hover:bg-slate-50">Signature Programs</a>
-        <a data-nav-page="fatherhood" href="fatherhood.html" class="block text-slate-700 px-2 py-2 rounded hover:bg-slate-50">Fatherhood</a>
-        <a data-nav-page="contact" href="contact.html" class="block text-slate-700 px-2 py-2 rounded hover:bg-slate-50">Contact</a>
-        <a data-nav-page="donate" href="donate.html" class="block text-slate-700 px-2 py-2 rounded hover:bg-slate-50">Donate</a>
-      </nav>
-    </div>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-      <header class="mb-6">
-        <h1 class="text-3xl font-bold">Support 2C Destiny</h1>
-        <p class="mt-2 text-slate-600 max-w-2xl mx-auto">Your gift helps families access coaching, training, and evidence-informed services.</p>
-      </header>
-
-      <section class="donation-tiers mb-8">
+    <section id="donation-tiers" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <h2 class="text-3xl font-bold text-center text-[var(--primary)] mb-6">Choose an impact level</h2>
+      <p class="text-center text-slate-600 max-w-2xl mx-auto mb-10">Select a suggested amount below or reach out to design a custom partnership that advances training, coaching, and family stabilization supports.</p>
+      <div class="donation-tiers">
         <div class="tier">
           <div class="tier-amount">$25</div>
-          <p class="mt-2">Provides materials for a family coaching session.</p>
-          <div class="mt-3"><a class="btn" href="#">Give $25</a></div>
+          <p class="mt-2 text-slate-600">Provides materials for a family coaching session.</p>
+          <div class="mt-4"><a class="btn-primary" href="mailto:info@2cdestiny.org?subject=Give%2025">Give $25</a></div>
         </div>
         <div class="tier">
           <div class="tier-amount">$75</div>
-          <p class="mt-2">Supports group training for community partners.</p>
-          <div class="mt-3"><a class="btn" href="#">Give $75</a></div>
+          <p class="mt-2 text-slate-600">Supports group training for community partners.</p>
+          <div class="mt-4"><a class="btn-primary" href="mailto:info@2cdestiny.org?subject=Give%2075">Give $75</a></div>
         </div>
         <div class="tier">
           <div class="tier-amount">$250</div>
-          <p class="mt-2">Funds outreach and program coaching for one cohort.</p>
-          <div class="mt-3"><a class="btn" href="#">Give $250</a></div>
+          <p class="mt-2 text-slate-600">Funds outreach and program coaching for one cohort.</p>
+          <div class="mt-4"><a class="btn-primary" href="mailto:info@2cdestiny.org?subject=Give%20250">Give $250</a></div>
         </div>
-      </section>
-
-  <p class="text-sm text-slate-600">Prefer to donate by mail? Send to: P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</p>
-    </main>
-
-    <footer class="site-footer" style="background:var(--brand-900); color:#f8fafc; padding:2rem 0;">
-      <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;justify-content:space-between;">
-          <div style="max-width:40rem">
-            <a href="index.html" class="logo" style="color:#fff;font-weight:700;font-size:1.1rem">2C Destiny</a>
-            <p style="margin-top:0.5rem;color:rgba(248,250,252,0.9)">Empowering families and community partners through programs and training.</p>
-          </div>
-
-          <div style="min-width:220px">
-            <h4 style="margin:0 0 .5rem 0;font-weight:700">Contact</h4>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;color:rgba(248,250,252,0.95)">
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19 19 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.06.35 2.09.69 3.06a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.97.34 2 .57 3.06.69A2 2 0 0 1 22 16.92z"/></svg><a href="tel:3524809223" style="color:inherit;text-decoration:none">352-480-9223</a></li>
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:info@2cdestiny.org" style="color:inherit;text-decoration:none">info@2cdestiny.org</a></li>
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</span></li>
-            </ul>
-            <p style="margin-top:.75rem;font-size:.9rem;color:rgba(248,250,252,0.8)">2C Destiny is a 501 (c) 3 organization</p>
-          </div>
-        </div>
-        <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:1rem;padding-top:1rem;text-align:center;font-size:.9rem;color:rgba(248,250,252,0.7)">&copy; 2025 2C Destiny. All rights reserved.</div>
       </div>
-    </footer>
+      <div class="mt-10 text-center text-slate-600">
+        Prefer to donate by mail? Send contributions to <strong>P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</strong>.
+      </div>
+    </section>
 
-    <script>
-      (function(){
-        var toggle = document.getElementById('mobile-menu-toggle');
-        var mobileNav = document.getElementById('mobile-nav');
-        var iconOpen = document.getElementById('icon-open');
-        var iconClose = document.getElementById('icon-close');
-        if(toggle && mobileNav){
-          toggle.addEventListener('click', function(){
-            var hidden = mobileNav.classList.toggle('hidden');
-            toggle.setAttribute('aria-expanded', String(!hidden));
-            iconOpen.classList.toggle('hidden'); iconClose.classList.toggle('hidden');
-          });
-        }
-        try{var page=document.body&&document.body.getAttribute('data-page');if(page){var link=document.querySelector('.site-nav a[data-nav-page="'+page+'"]');if(link){link.classList.add('active');link.setAttribute('aria-current','page');}}}catch(e){}
-      })();
-    </script>
-  </body>
-</html>
+    <section class="bg-white py-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl font-bold text-[var(--primary)] mb-4">Want to make a larger impact?</h2>
+        <p class="text-slate-600 mb-6">We collaborate with foundations, corporations, and community partners to create multi-year investments in coaching, mentorship, and workforce pathways.</p>
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="mailto:info@2cdestiny.org" class="btn-primary">Schedule a call</a>
+          <a href="contact.html" class="btn-outline">Contact us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-3">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="images/logo-mark.svg" alt="2C Destiny Consulting Group" class="h-10 w-auto" loading="lazy">
+            <span class="font-semibold text-lg">2C Destiny Consulting Group</span>
+          </div>
+          <p class="mt-4 text-slate-200 max-w-md">Empowering families and community partners through programs, training, and leadership development.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-white mb-3">Navigate</h3>
+          <ul class="space-y-2 text-sm text-slate-200">
+            <li><a data-nav-page="about" href="about.html" class="hover:text-white transition-colors">About</a></li>
+            <li><a data-nav-page="programs" href="signature-programs.html" class="hover:text-white transition-colors">Signature Programs</a></li>
+            <li><a data-nav-page="pillars" href="pillars.html" class="hover:text-white transition-colors">Pillars</a></li>
+            <li><a data-nav-page="team" href="meet-the-team.html" class="hover:text-white transition-colors">Meet the team</a></li>
+            <li><a data-nav-page="contact" href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+            <li><a data-nav-page="donate" href="donate.html" class="hover:text-white transition-colors">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold text-white mb-3">Connect</h3>
+          <ul class="space-y-2 text-sm text-slate-200">
+            <li><a href="tel:3524809223" class="hover:text-white transition-colors">📞 352-480-9223</a></li>
+            <li><a href="mailto:info@2cdestiny.org" class="hover:text-white transition-colors">✉️ info@2cdestiny.org</a></li>
+            <li>📍 P.O. BOX 772862<br>4545 SW 60th Ave.<br>Ocala, FL 34474-4301</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-meta">&copy; 2025 2C Destiny. All rights reserved.</div>
+    </div>
   </footer>
- </body>
+</body>
 </html>
