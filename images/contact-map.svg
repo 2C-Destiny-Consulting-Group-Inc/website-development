@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="map-title map-desc">
+  <title id="map-title">Map placeholder</title>
+  <desc id="map-desc">Stylized grid map with pin marking Ocala, Florida.</desc>
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <rect width="60" height="60" fill="#f1f5f9" />
+      <path d="M0 0H60M0 0V60" stroke="#cbd5f5" stroke-width="1" />
+    </pattern>
+    <linearGradient id="map-bg" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#eef2ff" />
+      <stop offset="100%" stop-color="#e0e7ff" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="600" fill="url(#map-bg)" />
+  <rect x="60" y="60" width="1080" height="480" fill="url(#grid)" opacity="0.6" />
+  <rect x="60" y="60" width="1080" height="480" fill="none" stroke="#94a3b8" stroke-width="2" opacity="0.6" />
+  <g transform="translate(800,320)">
+    <circle r="46" fill="rgba(91,33,182,0.12)" />
+    <circle r="28" fill="#5b21b6" opacity="0.2" />
+    <path d="M0-50 C30-50 50-30 50 0 C50 28 26 60 0 96 C-26 60 -50 28 -50 0 C-50-30 -30-50 0-50 Z" fill="#5b21b6" />
+    <circle cy="-14" r="16" fill="#fff" />
+  </g>
+  <text x="820" y="360" font-family="'Inter', sans-serif" font-size="32" fill="#1e293b" font-weight="600">Ocala, FL</text>
+</svg>

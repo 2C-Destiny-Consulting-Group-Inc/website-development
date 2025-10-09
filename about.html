@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>About Us — 2C Destiny</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="site.js" defer></script>
     <style>
       /* Framed heading */
       .about-frame{display:inline-block;padding:1rem 1.25rem;border-radius:12px;background:linear-gradient(180deg, rgba(91,33,182,0.08), rgba(124,58,237,0.04));border:1px solid rgba(91,33,182,0.12)}
@@ -14,12 +16,12 @@
   </head>
   <body data-page="about" class="min-h-screen bg-slate-50 text-slate-900">
 
-    <a href="#main" class="sr-only focus:not-sr-only" style="position:absolute;left:10px;top:10px;background:#fff;padding:6px 8px;border-radius:6px;">Skip to main content</a>
+    <a href="#main" class="skip-link">Skip to main content</a>
 
   <!-- Standard header: consistent across site -->
-  <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-      <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
+  <header class="site-header">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="index.html" class="brand" aria-label="2C Destiny Consulting Group">2C DESTINY CONSULTING GROUP</a>
       <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
         <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
         <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
@@ -148,62 +150,67 @@
       </div>
     </main>
 
-    <footer class="site-footer" style="background:var(--brand-900); color:#f8fafc; padding:2rem 0;">
-      <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;justify-content:space-between;">
-          <div style="max-width:40rem">
-            <a href="index.html" class="logo" style="color:#fff;font-weight:700;font-size:1.1rem">2C Destiny</a>
-            <p style="margin-top:0.5rem;color:rgba(248,250,252,0.9)">Empowering families and community partners through programs and training.</p>
+    <footer class="site-footer">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-8 md:grid-cols-3">
+          <div>
+            <div class="flex items-center gap-3">
+              <img src="images/logo-mark.svg" alt="2C Destiny Consulting Group" class="h-10 w-auto" loading="lazy">
+              <span class="font-semibold text-lg">2C Destiny Consulting Group</span>
+            </div>
+            <p class="mt-4 text-slate-200 max-w-md">Empowering families and community partners through programs and training.</p>
           </div>
-
-          <div style="min-width:220px">
-            <h4 style="margin:0 0 .5rem 0;font-weight:700">Contact</h4>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;color:rgba(248,250,252,0.95)">
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19 19 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.06.35 2.09.69 3.06a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.97.34 2 .57 3.06.69A2 2 0 0 1 22 16.92z"/></svg><a href="tel:3524809223" style="color:inherit;text-decoration:none">352-480-9223</a></li>
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:info@2cdestiny.org" style="color:inherit;text-decoration:none">info@2cdestiny.org</a></li>
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</span></li>
+          <div>
+            <h3 class="font-semibold text-white mb-3">Navigate</h3>
+            <ul class="space-y-2 text-sm text-slate-200">
+              <li><a data-nav-page="about" href="about.html" class="hover:text-white transition-colors">About</a></li>
+              <li><a data-nav-page="pillars" href="pillars.html" class="hover:text-white transition-colors">Pillars</a></li>
+              <li><a data-nav-page="programs" href="signature-programs.html" class="hover:text-white transition-colors">Signature Programs</a></li>
+              <li><a data-nav-page="fatherhood" href="fatherhood.html" class="hover:text-white transition-colors">Fatherhood</a></li>
+              <li><a data-nav-page="team" href="meet-the-team.html" class="hover:text-white transition-colors">Meet the team</a></li>
+              <li><a data-nav-page="contact" href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
             </ul>
-            <p style="margin-top:.75rem;font-size:.9rem;color:rgba(248,250,252,0.8)">2C Destiny is a 501 (c) 3 organization</p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white mb-3">Connect</h3>
+            <ul class="space-y-2 text-sm text-slate-200">
+              <li><a href="tel:3524809223" class="hover:text-white transition-colors">📞 352-480-9223</a></li>
+              <li><a href="mailto:info@2cdestiny.org" class="hover:text-white transition-colors">✉️ info@2cdestiny.org</a></li>
+              <li>📍 P.O. BOX 772862<br>4545 SW 60th Ave.<br>Ocala, FL 34474-4301</li>
+            </ul>
           </div>
         </div>
-        <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:1rem;padding-top:1rem;text-align:center;font-size:.9rem;color:rgba(248,250,252,0.7)">&copy; 2025 2C Destiny. All rights reserved.</div>
+        <div class="footer-meta">&copy; 2025 2C Destiny. All rights reserved.</div>
       </div>
     </footer>
 
     <script>
-      // mobile nav toggle
-      (function(){
-        var toggle = document.getElementById('mobile-menu-toggle');
-        var mobileNav = document.getElementById('mobile-nav');
-        var iconOpen = document.getElementById('icon-open');
-        var iconClose = document.getElementById('icon-close');
-        if(toggle && mobileNav){
-          toggle.addEventListener('click', function(){
-            var hidden = mobileNav.classList.toggle('hidden');
-            toggle.setAttribute('aria-expanded', String(!hidden));
-            iconOpen.classList.toggle('hidden'); iconClose.classList.toggle('hidden');
-          });
-        }
-
-        // collapsible toggles with keyboard support
-        document.addEventListener('DOMContentLoaded', function(){
-          document.querySelectorAll('.collapsible-toggle').forEach(function(btn){
-            // make button keyboard-friendly
-            btn.setAttribute('role','button');
-            btn.tabIndex = 0;
-            function toggleTarget(){
-              var targetId = btn.getAttribute('aria-controls');
-              var content = document.getElementById(targetId);
-              if(!content) return;
-              var isOpen = content.classList.contains('show');
-              if(!isOpen){ content.classList.add('show'); btn.setAttribute('aria-expanded','true'); }
-              else { content.classList.remove('show'); btn.setAttribute('aria-expanded','false'); }
+      document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('.collapsible-toggle').forEach(function(btn){
+          btn.setAttribute('role','button');
+          btn.tabIndex = 0;
+          function toggleTarget(){
+            var targetId = btn.getAttribute('aria-controls');
+            var content = document.getElementById(targetId);
+            if(!content) return;
+            var isOpen = content.classList.contains('show');
+            if(!isOpen){
+              content.classList.add('show');
+              btn.setAttribute('aria-expanded','true');
+            } else {
+              content.classList.remove('show');
+              btn.setAttribute('aria-expanded','false');
             }
-            btn.addEventListener('click', toggleTarget);
-            btn.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggleTarget(); } });
+          }
+          btn.addEventListener('click', toggleTarget);
+          btn.addEventListener('keydown', function(e){
+            if(e.key==='Enter' || e.key===' '){
+              e.preventDefault();
+              toggleTarget();
+            }
           });
         });
-      })();
+      });
     </script>
 
   </body>
