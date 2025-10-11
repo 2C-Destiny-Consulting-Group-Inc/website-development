@@ -12,6 +12,7 @@ All website images are now organized in the `/images/` directory for easy manage
 | **[IMAGE-INVENTORY.md](IMAGE-INVENTORY.md)** | 📋 Complete catalog of all images |
 | **[IMAGES-USAGE-GUIDE.md](IMAGES-USAGE-GUIDE.md)** | 📖 Detailed how-to guide |
 | **[IMAGE-REQUEST-TEMPLATE.md](IMAGE-REQUEST-TEMPLATE.md)** | 📝 Template for requests |
+| **[EXAMPLE-WORKFLOW.md](EXAMPLE-WORKFLOW.md)** | 💡 Step-by-step examples |
 | **[images/](images/)** | 📁 The images directory |
 
 ### 📂 Directory Structure
