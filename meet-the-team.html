@@ -14,9 +14,14 @@
 
       /* Team photo helpers: consistent crop and polished presentation */
       .team-figure { height: 280px; overflow: hidden; display: block; }
-      .team-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.3s ease; }
+      .team-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.3s ease; display:block; }
       .team-photo:hover { transform: scale(1.02); }
       .team-placeholder { height: 280px; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg,#f3f4f6,#e9ecef); color:#6b7280; font-weight:600; border-radius:0.5rem; border:1px solid rgba(15,23,42,0.04) }
+
+      /* Semantic wrapper support and responsive figure height for better fit */
+      .team-member img { object-fit: cover; object-position: center top; }
+      @media (max-width: 640px){ .team-figure { height: 240px; } }
+      @media (min-width: 1024px){ .team-figure { height: 320px; } }
 
       /* Shared card style for info sections */
       .info-card { background: white; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid rgba(15,23,42,0.04); }
@@ -101,7 +106,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
 
           <!-- Malveria Cox Carter -->
-          <article class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
+          <article class="team-member bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
             <figure class="team-figure w-full rounded-t-2xl overflow-hidden">
               <img src="/images/team/malveria-headshot-source-800.jpg" srcset="/images/team/malveria-headshot-source-800.jpg 800w, /images/team/malveria-headshot-source-400.jpg 400w" sizes="(min-width:1024px) 33vw, (min-width:640px) 45vw, 100vw" alt="Portrait of Malveria Cox Carter" class="team-photo bg-slate-100" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='/KIDS SMILING.jpg'"/>
             </figure>
@@ -123,7 +128,7 @@
           </article>
 
           <!-- MaryEtta P. Clarkson -->
-          <article class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
+          <article class="team-member bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
             <figure class="team-figure w-full rounded-t-2xl overflow-hidden">
               <img src="/images/team/maryetta-p-clarkson-800.jpg" srcset="/images/team/maryetta-p-clarkson-800.jpg 800w, /images/team/maryetta-p-clarkson-400.jpg 400w" sizes="(min-width:1024px) 33vw, (min-width:640px) 45vw, 100vw" alt="Portrait of MaryEtta P. Clarkson" class="team-photo" loading="lazy" decoding="async" />
             </figure>
@@ -145,7 +150,7 @@
           </article>
 
           <!-- Robert P. Carter -->
-          <article class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
+          <article class="team-member bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
             <figure class="team-figure w-full rounded-t-2xl overflow-hidden">
               <img src="/images/team/robert-source-800.jpg" srcset="/images/team/robert-source-800.jpg 800w, /images/team/robert-source-400.jpg 400w" sizes="(min-width:1024px) 33vw, (min-width:640px) 45vw, 100vw" alt="Portrait of Robert P. Carter" class="team-photo" loading="lazy" decoding="async" />
             </figure>
@@ -167,7 +172,7 @@
           </article>
 
           <!-- Sonia Lynch-Dillard -->
-          <article class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
+          <article class="team-member bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
             <figure class="team-figure w-full rounded-t-2xl overflow-hidden">
               <img src="/images/team/sonia-source-800.jpg" srcset="/images/team/sonia-source-800.jpg 800w, /images/team/sonia-source-400.jpg 400w" sizes="(min-width:1024px) 33vw, (min-width:640px) 45vw, 100vw" alt="Portrait of Sonia Lynch-Dillard" class="team-photo" loading="lazy" decoding="async" />
             </figure>
@@ -189,7 +194,7 @@
           </article>
 
           <!-- Doris "DeeDee" Banks -->
-          <article class="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
+          <article class="team-member bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200">
             <figure class="team-figure w-full rounded-t-2xl overflow-hidden">
               <div class="team-placeholder">Headshot coming soon</div>
             </figure>
