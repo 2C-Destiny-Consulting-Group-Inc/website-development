@@ -3,242 +3,143 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Signature Programs | 2C Destiny</title>
-  <meta name="description" content="Signature programs from 2C Destiny — flagship, evidence-informed offerings that strengthen families and communities." />
-  <meta property="og:title" content="Signature Programs — 2C Destiny">
-  <meta property="og:description" content="Flagship, evidence-informed offerings delivered by our certified practitioners to strengthen families and communities.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="/signature-programs.html">
-  <!-- og image removed per request to keep page image-free -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Signature Programs — 2C Destiny">
-  <meta name="twitter:description" content="Flagship, evidence-informed offerings delivered by our certified practitioners to strengthen families and communities.">
-  <!-- twitter image removed per request to keep page image-free -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Signature Programs — 2C Destiny Consulting Group</title>
+  <meta name="description" content="Explore the signature, evidence-informed programs from 2C Destiny Consulting Group." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="site.js" defer></script>
   <style>
-    /* Local image framing for signature programs to ensure perfect crop and professional look */
-    .img-frame{position:relative;overflow:hidden;border-radius:.5rem;background:#f8fafc;box-shadow:0 6px 18px rgba(15,23,42,0.06);}
-    .img-frame::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none}
-    .img-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .35s ease,filter .35s ease}
-    .img-frame:hover img{transform:scale(1.03)}
-  /* specific sizes used on this page */
-  /* Make the hero photo fill the right column and appear unframed */
-    .img-frame--hero{width:100%;border-radius:0;background:transparent;box-shadow:none;aspect-ratio:16/9;min-height:220px}
-    @media (min-width:640px){ .img-frame--hero{min-height:320px} }
-    @media (min-width:1024px){ .img-frame--hero{min-height:420px} }
-    /* Use an explicit aspect-ratio so all program images share the same frame; add min-heights for visual uniformity */
-  .img-frame--card{width:100%;aspect-ratio:16/9;height:auto;min-height:160px}
-    @media (min-width:640px){ .img-frame--card{aspect-ratio:16/9;min-height:210px} }
-    @media (min-width:1024px){ .img-frame--card{min-height:240px} }
-    /* Use this modifier when an image (like a sign) must be shown whole (no cropping) */
-    .img-frame--contain img{object-fit:contain;background:#fff}
-
-  /* Subtle page shading and card styling for a more engaging but gentle look using brand colors */
-  :root{--brand-900:#3b176e;--brand-700:#7c3aed;--brand-500:#a78bfa}
-  html,body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;line-height:1.5;color:var(--text)}
-  .page-accent{background:linear-gradient(180deg, rgba(124,58,237,0.03) 0%, rgba(124,58,237,0.007) 100%)}
-  .program-card{background:linear-gradient(180deg, rgba(124,58,237,0.03), rgba(255,255,255,1));border:1px solid rgba(124,58,237,0.07);box-shadow:0 10px 26px rgba(59,23,110,0.05);transition:box-shadow .2s ease,transform .18s ease}
-  .program-card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(59,23,110,0.09)}
-  .program-card .img-frame{background:#fff}
-
-  /* Gentle purple overlay on images to tie photography to the brand without overpowering */
-  .img-frame::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(180deg, rgba(124,58,237,0.055), rgba(124,58,237,0.00));mix-blend-mode:overlay}
-  /* Do not apply overlay when the image must be shown whole */
-  .img-frame.img-frame--contain::after{background:transparent}
-
-  /* Header / nav refinements */
-  .site-header{backdrop-filter:saturate(120%) blur(6px)}
-  .site-header .logo img.mini-logo{height:34px}
-  nav[aria-label='Primary'] a{color:var(--muted);text-decoration:none;padding:.25rem .15rem;border-radius:.25rem}
-  nav[aria-label='Primary'] a:hover{color:var(--brand-700)}
-  nav[aria-label='Primary'] a.active{color:var(--brand-900);font-weight:700;box-shadow:inset 0 -3px 0 var(--brand-500)}
-  /* Mobile active state */
-  #mobile-nav a.active{background:rgba(124,58,237,0.06);color:var(--brand-700);font-weight:600}
-
-  /* Typography tweaks */
-  h1{font-family:'Playfair Display', Georgia, serif;font-weight:700;letter-spacing:-0.02em}
-  h1.small-hero{font-size:2.6rem}
-  @media(min-width:768px){h1.small-hero{font-size:3rem}}
-  .lead{color:#475569}
-
-  /* Buttons */
-  .btn-cta{background:linear-gradient(90deg,var(--brand-700),var(--brand-500));color:#fff;padding:.6rem 1rem;border-radius:.5rem;text-decoration:none}
-  .btn-secondary{background:#fff;border:1px solid rgba(59,23,110,0.06);padding:.55rem .85rem;border-radius:.5rem;color:var(--brand-700)}
-
-  /* Accessibility: focus-visible outlines */
-  a:focus-visible, button:focus-visible{outline:3px solid rgba(124,58,237,0.18);outline-offset:3px}
-    /* Thicker top accent band to add color without overpowering the header */
-    .page-top-accent{height:36px;width:100%;background:linear-gradient(90deg, rgba(124,58,237,0.95), rgba(124,58,237,0.65));box-shadow:0 6px 20px rgba(59,23,110,0.08);display:flex;align-items:center;justify-content:center;padding:0 1rem}
-    @media (min-width:768px){.page-top-accent{height:48px}}
-    .page-top-accent .tagline{color:#fff;font-weight:600;font-size:.95rem;letter-spacing:0.01em}
-    .page-top-accent .tagline a{color:rgba(255,255,255,0.98);text-decoration:underline;text-decoration-thickness:1px;padding-left:.6rem}
-    @media(min-width:768px){.page-top-accent .tagline{font-size:1.05rem}}
+    .program-hero{padding:4rem 0 3rem;background:linear-gradient(135deg,rgba(91,33,182,0.95),rgba(139,92,246,0.82));color:#fff;}
+    .program-hero .container{display:grid;gap:2.5rem;align-items:center}
+    @media(min-width:980px){.program-hero .container{grid-template-columns:1.05fr 0.95fr}}
+    .program-hero img{border-radius:1.5rem;box-shadow:0 28px 60px rgba(15,23,42,0.24);}
+    .programs-grid{display:grid;gap:1.5rem;margin-top:2rem}
+    @media(min-width:980px){.programs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .program-card{background:#fff;border-radius:1.25rem;padding:1.75rem;border:1px solid rgba(124,58,237,0.12);box-shadow:0 22px 48px rgba(15,23,42,0.1);display:grid;gap:1rem}
+    .program-card img{border-radius:1rem;height:220px;object-fit:cover;width:100%;}
+    .program-card h3{margin:0;color:var(--brand-900)}
+    .cta-band{margin-top:3rem;background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(236,72,153,0.15));border-radius:1.5rem;padding:2.5rem;border:1px solid rgba(124,58,237,0.18);box-shadow:0 22px 48px rgba(124,58,237,0.18);text-align:center}
   </style>
 </head>
-
-<body data-page="programs" class="min-h-screen bg-slate-50 text-slate-900">
-  <div class="page-top-accent" aria-hidden="false">
-    <div class="tagline">Partner with our Signature Programs — transform outcomes for families <a href="contact.html">Partner</a></div>
-  </div>
-  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white px-2 py-1 rounded">Skip to main content</a>
-
-  <!-- Standard header: consistent across site -->
-  <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-      <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
-      <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
-        <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
-        <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
-        <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Pillars</a>
-        <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Signature Programs</a>
-        <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Fatherhood</a>
-        <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Contact</a>
-        <a data-nav-page="donate" href="donate.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Donate</a>
+<body data-page="programs">
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-mark" aria-label="2C Destiny Consulting Group">2C Destiny Consulting Group<span>Impact</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a data-nav-page="about" href="about.html">About</a>
+        <a data-nav-page="team" href="meet-the-team.html">Meet the Team</a>
+        <a data-nav-page="pillars" href="pillars.html">Pillars</a>
+        <a data-nav-page="programs" href="signature-programs.html">Signature Programs</a>
+        <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
+        <a data-nav-page="contact" href="contact.html">Contact</a>
+        <a data-nav-page="donate" href="donate.html">Donate</a>
       </nav>
-      <div class="md:hidden">
-        <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md text-gray-700 hover:bg-gray-50">Menu</button>
-      </div>
+      <button type="button" class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <svg data-icon-open xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg data-icon-close hidden xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
     </div>
-    <div id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
-      <nav class="px-4 py-4 space-y-2">
-        <a href="about.html" class="block text-gray-700">About</a>
-        <a href="meet-the-team.html" class="block text-gray-700">Meet the team</a>
-        <a href="pillars.html" class="block text-gray-700">Pillars</a>
-        <a href="signature-programs.html" class="block text-gray-700">Signature Programs</a>
-        <a href="fatherhood.html" class="block text-gray-700">Fatherhood</a>
-        <a href="contact.html" class="block text-gray-700">Contact</a>
-        <a href="donate.html" class="block text-gray-700">Donate</a>
-      </nav>
-    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile primary navigation">
+      <a data-nav-page="about" href="about.html">About</a>
+      <a data-nav-page="team" href="meet-the-team.html">Meet the Team</a>
+      <a data-nav-page="pillars" href="pillars.html">Pillars</a>
+      <a data-nav-page="programs" href="signature-programs.html">Signature Programs</a>
+      <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
+      <a data-nav-page="contact" href="contact.html">Contact</a>
+      <a data-nav-page="donate" href="donate.html">Donate</a>
+    </nav>
+  </header>
 
-  <main id="main" class="py-16 page-accent">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <section class="mb-12">
-        <div class="rounded-2xl overflow-hidden bg-gradient-to-tr from-violet-50 to-white border border-violet-100">
-          <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center px-6 py-12">
-            <div>
-              <h1 class="text-4xl font-extrabold text-violet-900">Signature Programs</h1>
-              <p class="mt-4 text-lg text-slate-600">Flagship, evidence-informed offerings delivered by our certified practitioners to strengthen families and communities.</p>
-
-              <div class="mt-6 flex flex-wrap gap-3">
-                <a href="contact.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-white" style="background: linear-gradient(90deg,var(--brand-700),var(--brand-500));">Partner with us</a>
-                <a href="donate.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-md border border-violet-200 text-violet-900 bg-white/90">Support programs</a>
-              </div>
-            </div>
-
-                <div class="hidden md:flex justify-end">
-                <div class="img-frame img-frame--hero">
-                  <img src="PROGRAMS FOR SIGNATURE PROGRAM S.jpg" alt="Program photo" loading="lazy" decoding="async" width="1600" height="900" />
-                </div>
-            </div>
+  <main>
+    <section class="program-hero">
+      <div class="container">
+        <div>
+          <span class="badge" style="background:rgba(255,255,255,0.2);color:#fff;">Signature Programs</span>
+          <h1 class="section-title" style="color:#fff;margin-bottom:1rem;">Flagship offerings that move vision into action.</h1>
+          <p style="font-size:1.05rem;color:rgba(255,255,255,0.88);">Our programs unite evidence-informed models, practitioner-led facilitation, and culturally responsive design. Each is tailored with partners to meet local goals.</p>
+          <div class="hero-actions" style="margin-top:1.5rem;">
+            <a class="btn-primary" href="contact.html">Plan a rollout</a>
+            <a class="btn-outline" href="donate.html">Support a program</a>
           </div>
         </div>
-      </section>
+        <div class="hidden lg:block">
+          <div class="image-placeholder" aria-hidden="true">Signature impact</div>
+        </div>
+      </div>
+    </section>
 
-      <div class="grid gap-8 md:grid-cols-2">
-  <article class="bg-white p-6 rounded-xl shadow-sm border border-violet-50 program-card">
-          <div class="w-full h-2 rounded-t-md" style="background: linear-gradient(90deg,var(--brand-700),var(--brand-500),var(--brand-300))"></div>
-          <h2 class="mt-4 text-xl font-bold text-violet-900">Fatherhood &amp; Family Resilience Initiative</h2>
-          <p class="mt-3 text-slate-700">A strengths-based program to engage fathers as partners in family stability and child well-being. Includes coaching, peer-support groups, and resource navigation.</p>
-          <div class="mt-4">
-              <div class="img-frame img-frame--card rounded-md">
-              <img src="fathers%202/reading.png" alt="Fatherhood program image" loading="lazy" decoding="async" width="800" height="450" />
-            </div>
+    <section class="container" style="padding:3.5rem 0;">
+      <h2 class="section-title">Programs at-a-glance</h2>
+      <p class="section-lead">Select a program to customize intensity, audience, and implementation support.</p>
+      <div class="programs-grid">
+        <article class="program-card">
+          <div class="image-placeholder small" aria-hidden="true">Fatherhood</div>
+          <div>
+            <h3>Fatherhood &amp; Family Resilience Initiative</h3>
+            <p class="muted">Engages fathers as partners in family stability with coaching, peer circles, and stewardship supports.</p>
           </div>
-          
         </article>
-
-  <article class="bg-white p-6 rounded-xl shadow-sm border border-violet-50 program-card">
-          <div class="w-full h-2 rounded-t-md" style="background: linear-gradient(90deg,var(--brand-800),var(--brand-600),var(--brand-400))"></div>
-          <h2 class="mt-4 text-xl font-bold text-violet-900">Trauma-Informed Practice Training</h2>
-          <p class="mt-3 text-slate-700">Interactive training for practitioners and leaders on trauma-responsive engagement, de-escalation, and family-centered care.</p>
-          <div class="mt-4">
-            <div class="img-frame img-frame--card img-frame--contain rounded-md">
-              <img src="HEALING.jpg" alt="Trauma-informed practice training photo" loading="lazy" decoding="async" width="800" height="450" />
-            </div>
+        <article class="program-card">
+          <div class="image-placeholder small" aria-hidden="true">Healing</div>
+          <div>
+            <h3>Trauma-Informed Practice Training</h3>
+            <p class="muted">Interactive labs for practitioners and leaders focused on trauma-responsive engagement and de-escalation.</p>
           </div>
-          
         </article>
-
-  <article class="bg-white p-6 rounded-xl shadow-sm border border-violet-50 program-card">
-          <div class="w-full h-2 rounded-t-md" style="background: linear-gradient(90deg,var(--brand-900),var(--brand-700),var(--brand-500))"></div>
-          <h2 class="mt-4 text-xl font-bold text-violet-900">Community Anti-Violence Interventions</h2>
-          <p class="mt-3 text-slate-700">Promotes peace by addressing conflicts early and de‑escalating tensions. We break cycles of harm before they escalate — prevention at its most powerful.</p>
-          <div class="mt-4">
-            <div class="img-frame img-frame--card rounded-md">
-              <img src="SMILING WITH PAINT ON FACE.jpg" alt="Community anti-violence program photo" loading="lazy" decoding="async" width="800" height="450" />
-            </div>
+        <article class="program-card">
+          <div class="image-placeholder small" aria-hidden="true">Community</div>
+          <div>
+            <h3>Community Anti-Violence Interventions</h3>
+            <p class="muted">Builds community-led teams to prevent violence, mediate conflict, and connect residents to resources.</p>
           </div>
-          
         </article>
-
-  <article class="bg-white p-6 rounded-xl shadow-sm border border-violet-50 program-card">
-          <div class="w-full h-2 rounded-t-md" style="background: linear-gradient(90deg,var(--brand-800),var(--brand-600),var(--brand-400))"></div>
-          <h2 class="mt-4 text-xl font-bold text-violet-900">Case Management &amp; Family Team Conferencing</h2>
-          <p class="mt-3 text-slate-700">Collaborative casework aligning families and systems around measurable outcomes for children and caregivers.</p>
-          <div class="mt-4">
-            <div class="img-frame img-frame--card rounded-md">
-              <img src="maryetta_high-quality_photo_of_families_of_diverse_backgrounds__8.png" alt="Case management and family team conferencing" loading="lazy" decoding="async" width="800" height="450" />
-            </div>
+        <article class="program-card">
+          <div class="image-placeholder small" aria-hidden="true">Collaboration</div>
+          <div>
+            <h3>Case Management &amp; Family Team Conferencing</h3>
+            <p class="muted">Aligns families and systems around shared outcomes through collaborative case planning and facilitation.</p>
           </div>
-          
         </article>
       </div>
-
-      <div class="mt-12 bg-violet-50 p-6 rounded-xl border border-violet-100">
-        <h3 class="text-2xl font-semibold text-violet-900">Partner or Fund a Program</h3>
-        <p class="mt-3 text-slate-700">To discuss partnership or implementation support, contact us at <a href="mailto:info@2cdestiny.org" class="text-violet-800 font-medium">info@2cdestiny.org</a> or call <a href="tel:3524809223" class="text-violet-800 font-medium">352-480-9223</a>.</p>
+      <div class="cta-band">
+        <h3 class="section-title" style="margin-bottom:0;color:var(--brand-900);">Co-design a signature experience</h3>
+        <p class="muted">We tailor timelines, facilitator coaching, and fidelity supports to your team. Schedule a discovery session to map next steps.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn-primary" href="contact.html">Schedule a discovery call</a>
+          <a class="btn-outline" href="donate.html">Fund program expansion</a>
+        </div>
       </div>
-    </div>
+    </section>
   </main>
 
-  <footer class="site-footer" style="background:var(--brand-900); color:#f8fafc; padding:2rem 0;">
-    <div class="container">
-      <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;justify-content:space-between;">
-        <div style="max-width:40rem">
-          <a href="index.html" class="logo" style="color:#fff;font-weight:700;font-size:1.1rem">2C Destiny</a>
-          <p style="margin-top:0.5rem;color:rgba(248,250,252,0.9)">Empowering families and community partners through programs and training.</p>
-        </div>
-
-        <div style="min-width:220px">
-          <h4 style="margin:0 0 .5rem 0;font-weight:700">Contact</h4>
-          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;color:rgba(248,250,252,0.95)">
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19 19 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.06.35 2.09.69 3.06a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.97.34 2 .57 3.06.69A2 2 0 0 1 22 16.92z"/></svg><a href="tel:3524809223" style="color:inherit;text-decoration:none">352-480-9223</a></li>
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:info@2cdestiny.org" style="color:inherit;text-decoration:none">info@2cdestiny.org</a></li>
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</span></li>
-          </ul>
-          <p style="margin-top:.75rem;font-size:.9rem;color:rgba(248,250,252,0.8)">2C Destiny is a 501 (c) 3 organization</p>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4 class="footer-heading" style="font-size:1.15rem;">2C Destiny Consulting Group</h4>
+        <p>Empowering families and community partners through programs, training, and leadership development.</p>
       </div>
-      <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:1rem;padding-top:1rem;text-align:center;font-size:.9rem;color:rgba(248,250,252,0.7)">&copy; 2025 2C Destiny. All rights reserved.</div>
+      <div>
+        <h4 class="footer-heading">Explore</h4>
+        <ul class="contact-list">
+          <li><a href="fatherhood.html">Fatherhood initiative</a></li>
+          <li><a href="pillars.html">Our pillars</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="contact-list">
+          <li>📞 <a href="tel:13524809223">+1 (352) 480-9223</a></li>
+          <li>✉️ <a href="mailto:info@2cdestiny.org">info@2cdestiny.org</a></li>
+          <li>📍 P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</li>
+        </ul>
+      </div>
     </div>
+    <div class="footer-bottom">© 2025 2C Destiny Consulting Group. All rights reserved.</div>
   </footer>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const pageId = document.body?.dataset?.page;
-      if (pageId) {
-        document.querySelectorAll('[data-nav-page]').forEach(el => {
-          if (el.dataset.navPage === pageId){
-            el.classList.add('active');
-            el.setAttribute('aria-current','page');
-          }
-        });
-      }
-      const toggle = document.getElementById('mobile-menu-toggle');
-      const mobileNav = document.getElementById('mobile-nav');
-      const iconOpen = document.getElementById('icon-open');
-      const iconClose = document.getElementById('icon-close');
-      if (toggle && mobileNav) {
-        toggle.addEventListener('click', () => {
-          const hidden = mobileNav.classList.toggle('hidden');
-          toggle.setAttribute('aria-expanded', String(!hidden));
-          iconOpen.classList.toggle('hidden');
-          iconClose.classList.toggle('hidden');
-        });
-      }
-    });
-  </script>
 </body>
 </html>
