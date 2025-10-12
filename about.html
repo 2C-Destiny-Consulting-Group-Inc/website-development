@@ -3,208 +3,184 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>About Us — 2C Destiny</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>About Us — 2C Destiny Consulting Group</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="site.js" defer></script>
     <style>
-      /* Framed heading */
-      .about-frame{display:inline-block;padding:1rem 1.25rem;border-radius:12px;background:linear-gradient(180deg, rgba(91,33,182,0.08), rgba(124,58,237,0.04));border:1px solid rgba(91,33,182,0.12)}
-      .about-frame h1{margin:0;color:var(--brand-700)}
+      .about-hero{padding:4rem 0 3rem;background:linear-gradient(135deg,rgba(91,33,182,0.95),rgba(139,92,246,0.82));color:#fff;}
+      .about-hero .container{display:grid;gap:2rem;align-items:center}
+      @media(min-width:960px){.about-hero .container{grid-template-columns:1.1fr 0.9fr}}
+      .about-hero img{border-radius:1.5rem;box-shadow:0 24px 60px rgba(15,23,42,0.28);}
+      .pillar-list{display:grid;gap:1.5rem;margin-top:2.5rem}
+      @media(min-width:900px){.pillar-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
+      .pillar-list article{background:#fff;border-radius:1.25rem;padding:1.75rem;border:1px solid rgba(124,58,237,0.15);box-shadow:0 18px 44px rgba(15,23,42,0.08);}
+      .details-grid{display:grid;gap:1.25rem;margin-top:1.5rem}
+      @media(min-width:900px){.details-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+      details{background:#fff;border-radius:1rem;padding:1.25rem 1.4rem;border:1px solid rgba(15,23,42,0.08);box-shadow:0 14px 32px rgba(15,23,42,0.06);transition:box-shadow .2s ease,transform .2s ease}
+      details[open]{box-shadow:0 22px 48px rgba(91,33,182,0.12);transform:translateY(-2px)}
+      details summary{cursor:pointer;font-weight:700;color:var(--brand-900);font-size:1.05rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;list-style:none}
+      details summary::-webkit-details-marker{display:none}
+      details p{margin-top:0.75rem;color:var(--text-muted)}
+      .team-glance{display:grid;gap:1.5rem;margin-top:2rem}
+      @media(min-width:900px){.team-glance{grid-template-columns:repeat(3,minmax(0,1fr))}}
+      .team-glance article{background:linear-gradient(180deg,rgba(124,58,237,0.06),rgba(124,58,237,0.02));border-radius:1.25rem;padding:1.5rem;border:1px solid rgba(124,58,237,0.12);}
+      .team-glance h3{margin:0 0 .75rem 0;color:var(--brand-900)}
+      .team-glance p{margin:0;color:var(--text-muted)}
     </style>
   </head>
-  <body data-page="about" class="min-h-screen bg-slate-50 text-slate-900">
-
-    <a href="#main" class="sr-only focus:not-sr-only" style="position:absolute;left:10px;top:10px;background:#fff;padding:6px 8px;border-radius:6px;">Skip to main content</a>
-
-  <!-- Standard header: consistent across site -->
-  <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-      <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
-      <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
-        <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
-        <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
-        <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Pillars</a>
-        <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Signature Programs</a>
-        <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Fatherhood</a>
-        <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Contact</a>
-        <a data-nav-page="donate" href="donate.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Donate</a>
-      </nav>
-      <div class="md:hidden">
-        <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md text-gray-700 hover:bg-gray-50">Menu</button>
+  <body data-page="about">
+    <header class="site-header">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand-mark" aria-label="2C Destiny Consulting Group">2C Destiny Consulting Group<span>Impact</span></a>
+        <nav class="site-nav" aria-label="Primary">
+          <a data-nav-page="about" href="about.html">About</a>
+          <a data-nav-page="team" href="meet-the-team.html">Meet the Team</a>
+          <a data-nav-page="pillars" href="pillars.html">Pillars</a>
+          <a data-nav-page="programs" href="signature-programs.html">Signature Programs</a>
+          <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
+          <a data-nav-page="contact" href="contact.html">Contact</a>
+          <a data-nav-page="donate" href="donate.html">Donate</a>
+        </nav>
+        <button type="button" class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-nav">
+          <span class="sr-only">Toggle navigation</span>
+          <svg data-icon-open xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          <svg data-icon-close hidden xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
       </div>
-    </div>
-    <div id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
-      <nav class="px-4 py-4 space-y-2">
-        <a href="about.html" class="block text-gray-700">About</a>
-        <a href="meet-the-team.html" class="block text-gray-700">Meet the team</a>
-        <a href="pillars.html" class="block text-gray-700">Pillars</a>
-        <a href="signature-programs.html" class="block text-gray-700">Signature Programs</a>
-        <a href="fatherhood.html" class="block text-gray-700">Fatherhood</a>
-        <a href="contact.html" class="block text-gray-700">Contact</a>
-        <a href="donate.html" class="block text-gray-700">Donate</a>
+      <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile primary navigation">
+        <a data-nav-page="about" href="about.html">About</a>
+        <a data-nav-page="team" href="meet-the-team.html">Meet the Team</a>
+        <a data-nav-page="pillars" href="pillars.html">Pillars</a>
+        <a data-nav-page="programs" href="signature-programs.html">Signature Programs</a>
+        <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
+        <a data-nav-page="contact" href="contact.html">Contact</a>
+        <a data-nav-page="donate" href="donate.html">Donate</a>
       </nav>
-    </div>
+    </header>
 
-    <main id="main" class="py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-8">
-          <div class="about-frame mx-auto">
-            <h1 class="text-4xl font-extrabold">About Us</h1>
+    <main>
+      <section class="about-hero">
+        <div class="container">
+          <div>
+            <span class="badge" style="background:rgba(255,255,255,0.2);color:#fff;">About 2C Destiny</span>
+            <h1 class="section-title" style="color:#fff;max-width:14ch;">We design systems where families can flourish.</h1>
+            <p style="font-size:1.1rem;max-width:60ch;color:rgba(255,255,255,0.88);">Our consultants and facilitators blend decades of leadership in public agencies, nonprofits, and community-based organizations. We bring pragmatic strategy, culturally grounded practice, and evidence-informed training to every engagement.</p>
+            <div class="hero-actions" style="margin-top:1.5rem;">
+              <a class="btn-primary" href="signature-programs.html">View signature programs</a>
+              <a class="btn-outline" href="contact.html">Schedule a briefing</a>
+            </div>
           </div>
-          <p class="mt-4 text-slate-600 max-w-2xl mx-auto">We partner with organizations and communities to build capacity, strengthen practice, and expand opportunity.</p>
+          <div class="hidden lg:block">
+            <div class="image-placeholder" aria-hidden="true">Community first</div>
+          </div>
         </div>
+      </section>
 
-        <!-- What Sets Us Apart -->
-        <section class="mb-12">
-          <h2 class="text-2xl font-bold text-violet-900 mb-6">What Sets Us Apart</h2>
-          <div class="grid md:grid-cols-2 gap-6">
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-exp">
-                <span><h3 class="text-xl font-bold text-brand-purple">Decades of Experience</h3></span>
-                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-exp" class="collapsible-content mt-3 text-slate-700">
-                <p>Program and operations leadership across public, nonprofit, and community-based sectors.</p>
-              </div>
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Our Approach</h2>
+          <p class="section-lead">We translate research and lived experience into practical tools. Every engagement blends strategic planning, practitioner coaching, and measurable implementation support.</p>
+          <div class="details-grid">
+            <details>
+              <summary>Decades of cross-sector leadership <span aria-hidden="true">+</span></summary>
+              <p>Our team has led operations across child welfare, behavioral health, community action, and education. We understand the realities of compliance, contracting, and day-to-day supervision.</p>
+            </details>
+            <details>
+              <summary>Interactive, scenario-based learning <span aria-hidden="true">+</span></summary>
+              <p>Training cohorts are built around real cases. Practitioners leave with scripts, playbooks, and coaching routines they can apply immediately.</p>
+            </details>
+            <details>
+              <summary>Implementation science in action <span aria-hidden="true">+</span></summary>
+              <p>We leverage continuous quality improvement, fidelity tools, and data coaching so teams can monitor progress and sustain change.</p>
+            </details>
+            <details>
+              <summary>Inclusive and trauma-responsive design <span aria-hidden="true">+</span></summary>
+              <p>Community voice, racial equity, and healing-centered engagement are woven into every assessment, plan, and training.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="background:#f7f5ff;">
+        <div class="container">
+          <h2 class="section-title">Commitments you can count on</h2>
+          <div class="details-grid">
+            <details>
+              <summary>Families &amp; communities first <span aria-hidden="true">+</span></summary>
+              <p>We champion stability, belonging, and opportunity so households and neighborhoods can thrive across generations.</p>
+            </details>
+            <details>
+              <summary>Equity in every layer <span aria-hidden="true">+</span></summary>
+              <p>From policy review to frontline coaching, we identify barriers, uplift voice, and co-create pathways that promote dignity and inclusion.</p>
+            </details>
+            <details>
+              <summary>Learning and improvement loops <span aria-hidden="true">+</span></summary>
+              <p>Dashboards, reflective supervision, and coaching plans keep improvements visible and actionable.</p>
+            </details>
+            <details>
+              <summary>Integrity &amp; accountability <span aria-hidden="true">+</span></summary>
+              <p>Transparent communication, ethical practice, and clear deliverables are non-negotiable in our partnerships.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Leadership at a glance</h2>
+          <p class="section-lead">Founders and directors bring a blend of executive leadership, program design, and frontline coaching experience.</p>
+          <div class="team-glance">
+            <article>
+              <h3>Malveria Cox Carter</h3>
+              <p>Chief Executive Officer — seasoned organizational leader focused on strategy, talent development, and multi-state operations.</p>
             </article>
-
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-train">
-                <span><h3 class="text-xl font-bold text-brand-purple">Interactive Training</h3></span>
-                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-train" class="collapsible-content mt-3 text-slate-700">
-                <p>Scenario-based, practitioner-led training that builds real-world skills and confidence.</p>
-              </div>
+            <article>
+              <h3>MaryEtta P. Clarkson</h3>
+              <p>Chief Operations &amp; Evidence Strategy Officer — guides implementation science, data infrastructure, and quality improvement.</p>
             </article>
-
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-support">
-                <span><h3 class="text-xl font-bold text-brand-purple">Support & Tools</h3></span>
-                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-support" class="collapsible-content mt-3 text-slate-700">
-                <p>Implementation support, playbooks, and fidelity tools that ensure quality and sustainability.</p>
-              </div>
-            </article>
-
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-inclusive">
-                <span><h3 class="text-xl font-bold text-brand-purple">Inclusive & Informed</h3></span>
-                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-inclusive" class="collapsible-content mt-3 text-slate-700">
-                <p>Trauma-responsive, culturally grounded, and strengths-based—co-designed with communities.</p>
-              </div>
+            <article>
+              <h3>Robert P. Carter</h3>
+              <p>Director of Community Outreach — mobilizes partners, faith communities, and coalition strategies to expand impact.</p>
             </article>
           </div>
-        </section>
-
-        <!-- Our Commitments -->
-        <section>
-          <h2 class="text-2xl font-bold text-violet-900 mb-6">Our Commitments</h2>
-          <div class="grid md:grid-cols-2 gap-6">
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-fam">
-                <span><h3 class="text-xl font-bold text-brand-purple">Families & Communities</h3></span>
-                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-fam" class="collapsible-content mt-3 text-slate-700">
-                <p>We champion stability, belonging, and opportunity so households and neighborhoods can thrive.</p>
-              </div>
-            </article>
-
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-equity">
-                <span><h3 class="text-xl font-bold text-brand-purple">Equity & Inclusion</h3></span>
-                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-equity" class="collapsible-content mt-3 text-slate-700">
-                <p>We uphold dignity, inclusion, and equitable access to resources and services.</p>
-              </div>
-            </article>
-
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-learning">
-                <span><h3 class="text-xl font-bold text-brand-purple">Learning & Improvement</h3></span>
-                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-learning" class="collapsible-content mt-3 text-slate-700">
-                <p>We leverage data-informed learning and continuous improvement to strengthen practices and systems.</p>
-              </div>
-            </article>
-
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-integrity">
-                <span><h3 class="text-xl font-bold text-brand-purple">Integrity & Ethics</h3></span>
-                <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-integrity" class="collapsible-content mt-3 text-slate-700">
-                <p>We commit to ethics, confidentiality, and rigorous quality assurance in all we do.</p>
-              </div>
-            </article>
+          <div class="address-block" style="margin-top:2.5rem;">
+            <strong>Let’s talk impact.</strong>
+            <span>Phone: <a class="inline-link" href="tel:13524809223">+1 (352) 480-9223</a></span>
+            <span>Email: <a class="inline-link" href="mailto:info@2cdestiny.org">info@2cdestiny.org</a></span>
+            <span>Mailing address: P.O. BOX 772862 · 4545 SW 60th Ave., Ocala, FL 34474-4301</span>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </main>
 
-    <footer class="site-footer" style="background:var(--brand-900); color:#f8fafc; padding:2rem 0;">
-      <div class="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div style="display:flex;flex-wrap:wrap;gap:1.5rem;align-items:flex-start;justify-content:space-between;">
-          <div style="max-width:40rem">
-            <a href="index.html" class="logo" style="color:#fff;font-weight:700;font-size:1.1rem">2C Destiny</a>
-            <p style="margin-top:0.5rem;color:rgba(248,250,252,0.9)">Empowering families and community partners through programs and training.</p>
-          </div>
-
-          <div style="min-width:220px">
-            <h4 style="margin:0 0 .5rem 0;font-weight:700">Contact</h4>
-            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.5rem;color:rgba(248,250,252,0.95)">
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19 19 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.12 1.06.35 2.09.69 3.06a2 2 0 0 1-.45 2.11L9.91 11.09a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.11-.45c.97.34 2 .57 3.06.69A2 2 0 0 1 22 16.92z"/></svg><a href="tel:3524809223" style="color:inherit;text-decoration:none">352-480-9223</a></li>
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:info@2cdestiny.org" style="color:inherit;text-decoration:none">info@2cdestiny.org</a></li>
-              <li style="display:flex;gap:.6rem;align-items:center"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 6-9 13-9 13S3 16 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</span></li>
-            </ul>
-            <p style="margin-top:.75rem;font-size:.9rem;color:rgba(248,250,252,0.8)">2C Destiny is a 501 (c) 3 organization</p>
-          </div>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <h4 class="footer-heading" style="font-size:1.15rem;">2C Destiny Consulting Group</h4>
+          <p>Empowering families and community partners through programs, training, and leadership development.</p>
         </div>
-        <div style="border-top:1px solid rgba(255,255,255,0.06);margin-top:1rem;padding-top:1rem;text-align:center;font-size:.9rem;color:rgba(248,250,252,0.7)">&copy; 2025 2C Destiny. All rights reserved.</div>
+        <div>
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="contact-list">
+            <li><a href="meet-the-team.html">Meet the Team</a></li>
+            <li><a href="signature-programs.html">Signature Programs</a></li>
+            <li><a href="donate.html">Donate</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="contact-list">
+            <li>📞 <a href="tel:13524809223">+1 (352) 480-9223</a></li>
+            <li>✉️ <a href="mailto:info@2cdestiny.org">info@2cdestiny.org</a></li>
+            <li>📍 P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</li>
+          </ul>
+        </div>
       </div>
+      <div class="footer-bottom">© 2025 2C Destiny Consulting Group. All rights reserved.</div>
     </footer>
-
-    <script>
-      // mobile nav toggle
-      (function(){
-        var toggle = document.getElementById('mobile-menu-toggle');
-        var mobileNav = document.getElementById('mobile-nav');
-        var iconOpen = document.getElementById('icon-open');
-        var iconClose = document.getElementById('icon-close');
-        if(toggle && mobileNav){
-          toggle.addEventListener('click', function(){
-            var hidden = mobileNav.classList.toggle('hidden');
-            toggle.setAttribute('aria-expanded', String(!hidden));
-            iconOpen.classList.toggle('hidden'); iconClose.classList.toggle('hidden');
-          });
-        }
-
-        // collapsible toggles with keyboard support
-        document.addEventListener('DOMContentLoaded', function(){
-          document.querySelectorAll('.collapsible-toggle').forEach(function(btn){
-            // make button keyboard-friendly
-            btn.setAttribute('role','button');
-            btn.tabIndex = 0;
-            function toggleTarget(){
-              var targetId = btn.getAttribute('aria-controls');
-              var content = document.getElementById(targetId);
-              if(!content) return;
-              var isOpen = content.classList.contains('show');
-              if(!isOpen){ content.classList.add('show'); btn.setAttribute('aria-expanded','true'); }
-              else { content.classList.remove('show'); btn.setAttribute('aria-expanded','false'); }
-            }
-            btn.addEventListener('click', toggleTarget);
-            btn.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggleTarget(); } });
-          });
-        });
-      })();
-    </script>
-
   </body>
 </html>

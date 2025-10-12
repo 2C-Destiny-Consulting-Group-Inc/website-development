@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meet the Team — 2C Destiny Consulting Group</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="site.js" defer></script>
+  <style>
+    .team-hero{padding:4rem 0 3rem;background:linear-gradient(135deg,rgba(59,7,100,0.94),rgba(124,58,237,0.82));color:#fff;}
+    .team-hero .container{display:grid;gap:2.5rem;align-items:center}
+    @media(min-width:980px){.team-hero .container{grid-template-columns:1.05fr 0.95fr}}
+    .team-hero img{border-radius:1.5rem;box-shadow:0 26px 60px rgba(15,23,42,0.24);}
+    .team-grid{display:grid;gap:1.75rem;margin-top:2.5rem}
+    @media(min-width:1024px){.team-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(min-width:640px) and (max-width:1023px){.team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    .team-card{background:#fff;border-radius:1.5rem;padding:1.75rem;border:1px solid rgba(124,58,237,0.12);box-shadow:0 22px 48px rgba(15,23,42,0.1);display:grid;gap:0.85rem}
+    .team-card h3{margin:0;color:var(--brand-900)}
+    .team-card .role{font-weight:600;color:var(--brand-700)}
+    .team-card p{margin:0;color:var(--text-muted)}
+    .avatar{width:72px;height:72px;border-radius:20px;background:linear-gradient(135deg,rgba(124,58,237,0.75),rgba(236,72,153,0.72));display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.4rem;color:#fff}
+    .tag-list{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:0.5rem}
+    .tag-list li{padding:0.3rem 0.7rem;border-radius:999px;background:rgba(124,58,237,0.1);color:var(--brand-800);font-size:0.78rem;font-weight:600}
+    details{background:rgba(124,58,237,0.08);border-radius:1rem;padding:1rem;border:1px solid rgba(124,58,237,0.16)}
+    details summary{cursor:pointer;font-weight:600;color:var(--brand-900);list-style:none}
+    details summary::-webkit-details-marker{display:none}
+    details p{margin-top:0.75rem;color:var(--text-muted)}
+    .cta-section{margin-top:3rem;background:linear-gradient(135deg,rgba(124,58,237,0.12),rgba(236,72,153,0.15));padding:2.5rem;border-radius:1.5rem;border:1px solid rgba(124,58,237,0.18);box-shadow:0 22px 48px rgba(124,58,237,0.18);text-align:center}
+  </style>
+</head>
+<body data-page="team">
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-mark" aria-label="2C Destiny Consulting Group">2C Destiny Consulting Group<span>Impact</span></a>
+      <nav class="site-nav" aria-label="Primary">
+        <a data-nav-page="about" href="about.html">About</a>
+        <a data-nav-page="team" href="meet-the-team.html">Meet the Team</a>
+        <a data-nav-page="pillars" href="pillars.html">Pillars</a>
+        <a data-nav-page="programs" href="signature-programs.html">Signature Programs</a>
+        <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
+        <a data-nav-page="contact" href="contact.html">Contact</a>
+        <a data-nav-page="donate" href="donate.html">Donate</a>
+      </nav>
+      <button type="button" class="mobile-toggle" data-mobile-toggle aria-expanded="false" aria-controls="mobile-nav">
+        <span class="sr-only">Toggle navigation</span>
+        <svg data-icon-open xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg data-icon-close hidden xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <nav id="mobile-nav" class="mobile-nav" aria-label="Mobile primary navigation">
+      <a data-nav-page="about" href="about.html">About</a>
+      <a data-nav-page="team" href="meet-the-team.html">Meet the Team</a>
+      <a data-nav-page="pillars" href="pillars.html">Pillars</a>
+      <a data-nav-page="programs" href="signature-programs.html">Signature Programs</a>
+      <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
+      <a data-nav-page="contact" href="contact.html">Contact</a>
+      <a data-nav-page="donate" href="donate.html">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="team-hero">
+      <div class="container">
+        <div>
+          <span class="badge" style="background:rgba(255,255,255,0.18);color:#fff;">Leadership rooted in purpose</span>
+          <h1 class="section-title" style="color:#fff;margin-bottom:1rem;">Meet the people guiding transformational change.</h1>
+          <p style="font-size:1.05rem;color:rgba(255,255,255,0.88);">Our founding team blends lived experience, executive leadership, and practitioner expertise to design resilient systems for families and communities.</p>
+          <div class="hero-actions" style="margin-top:1.5rem;">
+            <a class="btn-primary" href="contact.html">Start a conversation</a>
+            <a class="btn-outline" href="signature-programs.html">View programs</a>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="image-placeholder" aria-hidden="true">Leadership in action</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="padding:3.5rem 0;">
+      <h2 class="section-title">Executive team</h2>
+      <p class="section-lead">A multidisciplinary leadership group guiding strategy, implementation, and community partnerships.</p>
+      <div class="team-grid">
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">MC</div>
+          <div>
+            <h3>Malveria Cox Carter</h3>
+            <p class="role">Chief Executive Officer</p>
+            <p>Seasoned organizational leader shaping strategy, talent development, and multi-state operations with a focus on equity and culture.</p>
+          </div>
+          <ul class="tag-list">
+            <li>Strategic leadership</li>
+            <li>Culture building</li>
+            <li>Operations</li>
+          </ul>
+          <details>
+            <summary>Read bio</summary>
+            <p>Malveria is an accomplished senior leader with 15+ years of experience in program management, educational administration, and team development. She has overseen multi-state operations, managed complex budgets, and advanced continuous quality improvement initiatives. She is a Certified Child Welfare Supervisor and a founding member of 2C Destiny Consulting Group.</p>
+          </details>
+        </article>
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">MC</div>
+          <div>
+            <h3>MaryEtta P. Clarkson</h3>
+            <p class="role">Chief Operations &amp; Evidence Strategy Officer</p>
+            <p>Visionary systems thinker integrating implementation science, data infrastructure, and quality improvement.</p>
+          </div>
+          <ul class="tag-list">
+            <li>Implementation science</li>
+            <li>CQI &amp; evaluation</li>
+            <li>Data strategy</li>
+          </ul>
+          <details>
+            <summary>Read bio</summary>
+            <p>MaryEtta has more than 30 years of experience spearheading transformative change across child welfare, nonprofit leadership, and community empowerment. Her work blends compassionate leadership with expertise in behavioral health and systems transformation to strengthen supports for at-risk families nationwide.</p>
+          </details>
+        </article>
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">RC</div>
+          <div>
+            <h3>Robert P. Carter</h3>
+            <p class="role">Director of Community Outreach</p>
+            <p>Mobilizes partners, faith communities, and coalition strategies to expand reach and shared impact.</p>
+          </div>
+          <ul class="tag-list">
+            <li>Coalition building</li>
+            <li>Community engagement</li>
+            <li>Resource navigation</li>
+          </ul>
+          <details>
+            <summary>Read bio</summary>
+            <p>Robert previously owned a licensed emergency shelter and foster group home and brings over 25 years of operational experience. He excels at improving efficiency, leading teams, and enhancing community relationships as a founding member of 2C Destiny Consulting Group.</p>
+          </details>
+        </article>
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">SL</div>
+          <div>
+            <h3>Sonia Lynch-Dillard</h3>
+            <p class="role">Chief of Knowledge Transformation &amp; Development</p>
+            <p>Turns research into practitioner-ready learning with scenario-based curricula and train-the-trainer cohorts.</p>
+          </div>
+          <ul class="tag-list">
+            <li>Curriculum design</li>
+            <li>Adult learning</li>
+            <li>Facilitator coaching</li>
+          </ul>
+          <details>
+            <summary>Read bio</summary>
+            <p>Sonia designs experiential learning rooted in brain science, coaching, and reflective supervision. Her approach equips practitioners to lead with empathy, clarity, and practical tools.</p>
+          </details>
+        </article>
+        <article class="team-card">
+          <div class="avatar" aria-hidden="true">DB</div>
+          <div>
+            <h3>Doris “DeeDee” Banks</h3>
+            <p class="role">Director of Process Integrity</p>
+            <p>Aligns policy, documentation, and day-to-day practice to ensure fidelity and quality across teams.</p>
+          </div>
+          <ul class="tag-list">
+            <li>Quality assurance</li>
+            <li>Compliance</li>
+            <li>Fidelity monitoring</li>
+          </ul>
+          <details>
+            <summary>Read bio</summary>
+            <p>Doris advances process integrity by leading fidelity checks, case reviews, and staff coaching. Her collaborative style helps teams simplify workflows and deliver consistent, high-quality services.</p>
+          </details>
+        </article>
+      </div>
+      <div class="cta-section">
+        <h3 class="section-title" style="margin-bottom:0;color:var(--brand-900);">Partner with our team</h3>
+        <p class="muted">Whether you need executive consultation, facilitation, or implementation coaching, we’ll assemble the right experts.</p>
+        <div class="hero-actions" style="justify-content:center;">
+          <a class="btn-primary" href="contact.html">Connect with us</a>
+          <a class="btn-outline" href="donate.html">Support our mission</a>
+        </div>
+      </div>
+      <div class="address-block" style="margin-top:2.5rem;">
+        <strong>Direct contact</strong>
+        <span>Phone: <a class="inline-link" href="tel:13524809223">+1 (352) 480-9223</a></span>
+        <span>Email: <a class="inline-link" href="mailto:info@2cdestiny.org">info@2cdestiny.org</a></span>
+        <span>Mailing address: P.O. BOX 772862 · 4545 SW 60th Ave., Ocala, FL 34474-4301</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h4 class="footer-heading" style="font-size:1.15rem;">2C Destiny Consulting Group</h4>
+        <p>Empowering families and community partners through programs, training, and leadership development.</p>
+      </div>
+      <div>
+        <h4 class="footer-heading">Discover</h4>
+        <ul class="contact-list">
+          <li><a href="signature-programs.html">Signature Programs</a></li>
+          <li><a href="fatherhood.html">Fatherhood initiative</a></li>
+          <li><a href="donate.html">Donate</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="footer-heading">Contact</h4>
+        <ul class="contact-list">
+          <li>📞 <a href="tel:13524809223">+1 (352) 480-9223</a></li>
+          <li>✉️ <a href="mailto:info@2cdestiny.org">info@2cdestiny.org</a></li>
+          <li>📍 P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 2C Destiny Consulting Group. All rights reserved.</div>
+  </footer>
+</body>
+</html>
