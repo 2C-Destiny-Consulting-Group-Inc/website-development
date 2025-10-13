@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2-C Destiny Site Files</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; margin: 2rem; }
+    .container { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; }
+    ul { line-height: 1.9; }
+    a { color: #0b69d5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Public Files</h1>
+    <ul>
+      {% for f in files %}
+        <li><a href="/{{ f }}">/{{ f }}</a></li>
+      {% else %}
+        <li><em>No files found in public/</em></li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
