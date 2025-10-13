@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>2-C Destiny Admin Upload</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, sans-serif; margin: 2rem; }
+    .container { max-width: 720px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; }
+    form { border: 1px solid #ddd; padding: 1rem; border-radius: 8px; }
+    .actions { margin-top: 1rem; }
+    input[type="file"] { display: block; margin-top: 0.5rem; }
+    .flash { background: #f5f5f5; border-left: 4px solid #4b9; padding: 0.5rem 0.75rem; margin-bottom: 1rem; }
+    .note { color: #555; font-size: 0.9rem; }
+    a { color: #0b69d5; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Upload HTML page or ZIP</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for message in messages %}
+          <div class="flash">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <form action="" method="post" enctype="multipart/form-data">
+      <label for="file">Choose .html, .htm or .zip</label>
+      <input id="file" name="file" type="file" required />
+      <div class="actions">
+        <button type="submit">Upload</button>
+      </div>
+      <p class="note">ZIPs will be extracted into the site root.</p>
+    </form>
+
+    <p class="note">View site: <a href="/" target="_blank">Open homepage</a></p>
+  </div>
+</body>
+</html>
