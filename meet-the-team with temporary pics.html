@@ -13,8 +13,15 @@
       html { scroll-behavior: smooth; }
       /* Team photo helpers: enforce consistent crop and polished presentation */
       .team-figure{height:16rem;overflow:hidden;display:block}
-      OPTION a
+      .team-photo{width:100%;height:100%;object-fit:cover;object-position:center top;transition:transform 0.3s ease;display:block}
+      .team-photo:hover{transform:scale(1.02)}
       .team-placeholder{height:16rem;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#f3f4f6,#e9ecef);color:#6b7280;font-weight:600;border-radius:0.5rem;border:1px solid rgba(15,23,42,0.04)}
+
+      /* Semantic wrapper support and responsive figure height for better fit */
+      .team-member img { object-fit: cover; object-position: center top; }
+      @media (max-width: 640px){ .team-figure { height: 240px; } .team-placeholder { height: 240px; } }
+      @media (min-width: 1024px){ .team-figure { height: 320px; } .team-placeholder { height: 320px; } }
+
       /* Learn/Contact section shared card style */
       .info-card { background: white; border-radius: 1rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border: 1px solid rgba(15,23,42,0.04); }
     </style>
@@ -57,15 +64,15 @@
     <!-- Standard header: consistent across site -->
     <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-        <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
+        <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--brand-700);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
         <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
-          <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
-          <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
-          <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Pillars</a>
-          <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Signature Programs</a>
-          <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Fatherhood</a>
-          <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Contact</a>
-          <a data-nav-page="donate" href="donate.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Donate</a>
+          <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--brand-700)]">About</a>
+          <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--brand-700)]">Meet the team</a>
+          <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--brand-700)]">Pillars</a>
+          <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--brand-700)]">Signature Programs</a>
+          <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--brand-700)]">Fatherhood</a>
+          <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--brand-700)]">Contact</a>
+          <a data-nav-page="donate" href="donate.html" class="text-sm text-gray-700 hover:text-[var(--brand-700)]">Donate</a>
         </nav>
         <div class="md:hidden">
           <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md text-gray-700 hover:bg-gray-50">Menu</button>
@@ -86,8 +93,8 @@
     <!-- Hero -->
     <section class="hero-gradient text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
-        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Meet the Team</h1>
-        <p class="text-lg sm:text-xl text-white/90 mt-3 max-w-3xl mx-auto">The people behind our impact—blending lived experience, rigorous practice, and evidence-based methods.</p>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight">Leaders creating transformation and impact.</h1>
+        <p class="text-lg sm:text-xl text-white/90 mt-3 max-w-3xl mx-auto">Experienced professionals dedicated to developing leaders, strengthening practice, and supporting families and communities.</p>
       </div>
     </section>
 
@@ -227,7 +234,7 @@
               </ul>
               <div class="mt-6">
                 <a href="#contact" class="inline-flex items-center gap-2 bg-[var(--brand-700)] text-white px-5 py-3 rounded-xl text-sm font-semibold">Contact our team</a>
-                <a href="programs.html" class="inline-flex items-center gap-2 ml-3 border border-[var(--brand-700)] text-[var(--brand-700)] px-5 py-3 rounded-xl text-sm font-semibold">View programs</a>
+                <a href="signature-programs.html" class="inline-flex items-center gap-2 ml-3 border border-[var(--brand-700)] text-[var(--brand-700)] px-5 py-3 rounded-xl text-sm font-semibold">View programs</a>
               </div>
             </div>
             <div class="hidden md:block">
@@ -343,18 +350,16 @@
       (function(){
         var toggle=document.getElementById('mobile-menu-toggle');
         var mobileNav=document.getElementById('mobile-nav');
-        var iconOpen=document.getElementById('icon-open');
-        var iconClose=document.getElementById('icon-close');
         if(toggle && mobileNav){
           toggle.addEventListener('click', function(){
             var hidden = mobileNav.classList.toggle('hidden');
             toggle.setAttribute('aria-expanded', String(!hidden));
-            iconOpen.classList.toggle('hidden'); iconClose.classList.toggle('hidden');
           });
         }
+        // mark active nav link if matches body data-page
         try{
           var page=document.body&&document.body.getAttribute('data-page');
-          if(page){var link=document.querySelector('.site-nav a[data-nav-page="'+page+'"]'); if(link){ link.classList.add('active'); link.setAttribute('aria-current','page'); }}
+          if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"]'); if(el){ el.classList.add('font-semibold'); el.setAttribute('aria-current','page'); } }
         }catch(e){}
       })();
     </script>
