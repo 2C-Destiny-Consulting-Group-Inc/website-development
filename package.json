@@ -1,0 +1,27 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "2-C Destiny website server with HTML upload",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2C-Destiny-Consulting-Group-Inc/website-development.git"
+  },
+  "keywords": ["2-c", "destiny", "upload", "website"],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/2C-Destiny-Consulting-Group-Inc/website-development/issues"
+  },
+  "homepage": "https://github.com/2C-Destiny-Consulting-Group-Inc/website-development#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "multer": "^2.0.2"
+  }
+}
