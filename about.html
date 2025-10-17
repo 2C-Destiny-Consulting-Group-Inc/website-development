@@ -10,6 +10,74 @@
       /* Framed heading */
       .about-frame{display:inline-block;padding:1rem 1.25rem;border-radius:12px;background:linear-gradient(180deg, rgba(91,33,182,0.08), rgba(124,58,237,0.04));border:1px solid rgba(91,33,182,0.12)}
       .about-frame h1{margin:0;color:var(--brand-700)}
+      
+      /* Accordion styles using details/summary */
+      .accordion-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.95), rgba(250,249,255,1));
+        border-radius: 0.75rem;
+        padding: 1.25rem;
+        border: 1px solid rgba(124, 58, 237, 0.15);
+        box-shadow: 0 2px 8px rgba(91, 33, 182, 0.08);
+        transition: all 0.2s ease;
+      }
+      
+      .accordion-card:hover {
+        box-shadow: 0 4px 16px rgba(91, 33, 182, 0.12);
+        border-color: rgba(124, 58, 237, 0.25);
+      }
+      
+      .accordion-card summary {
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        user-select: none;
+      }
+      
+      .accordion-card summary::-webkit-details-marker {
+        display: none;
+      }
+      
+      .accordion-card summary .chev {
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+      }
+      
+      .accordion-card[open] summary .chev {
+        transform: rotate(90deg);
+      }
+      
+      .accordion-content {
+        margin-top: 0.75rem;
+        animation: slideDown 0.3s ease-out;
+      }
+      
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      /* About image styling */
+      .about-image-container {
+        margin: 2rem auto;
+        max-width: 800px;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(91, 33, 182, 0.15);
+      }
+      
+      .about-image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
     </style>
   </head>
   <body data-page="about" class="min-h-screen bg-slate-50 text-slate-900">
@@ -58,92 +126,97 @@
         <section class="mb-12">
           <h2 class="text-2xl font-bold text-violet-900 mb-6">What Sets Us Apart</h2>
           <div class="grid md:grid-cols-2 gap-6">
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-exp">
-                <span><h3 class="text-xl font-bold text-brand-purple">Decades of Experience</h3></span>
+            <details class="accordion-card">
+              <summary>
+                <h3 class="text-xl font-bold text-brand-purple">Decades of Experience</h3>
                 <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-exp" class="collapsible-content mt-3 text-slate-700">
+              </summary>
+              <div class="accordion-content text-slate-700">
                 <p>Program and operations leadership across public, nonprofit, and community-based sectors.</p>
               </div>
-            </article>
+            </details>
 
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-train">
-                <span><h3 class="text-xl font-bold text-brand-purple">Interactive Training</h3></span>
+            <details class="accordion-card">
+              <summary>
+                <h3 class="text-xl font-bold text-brand-purple">Interactive Training</h3>
                 <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-train" class="collapsible-content mt-3 text-slate-700">
+              </summary>
+              <div class="accordion-content text-slate-700">
                 <p>Scenario-based, practitioner-led training that builds real-world skills and confidence.</p>
               </div>
-            </article>
+            </details>
 
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-support">
-                <span><h3 class="text-xl font-bold text-brand-purple">Support & Tools</h3></span>
+            <details class="accordion-card">
+              <summary>
+                <h3 class="text-xl font-bold text-brand-purple">Support & Tools</h3>
                 <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-support" class="collapsible-content mt-3 text-slate-700">
+              </summary>
+              <div class="accordion-content text-slate-700">
                 <p>Implementation support, playbooks, and fidelity tools that ensure quality and sustainability.</p>
               </div>
-            </article>
+            </details>
 
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-inclusive">
-                <span><h3 class="text-xl font-bold text-brand-purple">Inclusive & Informed</h3></span>
+            <details class="accordion-card">
+              <summary>
+                <h3 class="text-xl font-bold text-brand-purple">Inclusive & Informed</h3>
                 <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-inclusive" class="collapsible-content mt-3 text-slate-700">
+              </summary>
+              <div class="accordion-content text-slate-700">
                 <p>Trauma-responsive, culturally grounded, and strengths-based—co-designed with communities.</p>
               </div>
-            </article>
+            </details>
           </div>
         </section>
 
         <!-- Our Commitments -->
-        <section>
+        <section class="mb-12">
           <h2 class="text-2xl font-bold text-violet-900 mb-6">Our Commitments</h2>
           <div class="grid md:grid-cols-2 gap-6">
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-fam">
-                <span><h3 class="text-xl font-bold text-brand-purple">Families & Communities</h3></span>
+            <details class="accordion-card">
+              <summary>
+                <h3 class="text-xl font-bold text-brand-purple">Families & Communities</h3>
                 <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-fam" class="collapsible-content mt-3 text-slate-700">
+              </summary>
+              <div class="accordion-content text-slate-700">
                 <p>We champion stability, belonging, and opportunity so households and neighborhoods can thrive.</p>
               </div>
-            </article>
+            </details>
 
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-equity">
-                <span><h3 class="text-xl font-bold text-brand-purple">Equity & Inclusion</h3></span>
+            <details class="accordion-card">
+              <summary>
+                <h3 class="text-xl font-bold text-brand-purple">Equity & Inclusion</h3>
                 <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-equity" class="collapsible-content mt-3 text-slate-700">
+              </summary>
+              <div class="accordion-content text-slate-700">
                 <p>We uphold dignity, inclusion, and equitable access to resources and services.</p>
               </div>
-            </article>
+            </details>
 
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-learning">
-                <span><h3 class="text-xl font-bold text-brand-purple">Learning & Improvement</h3></span>
+            <details class="accordion-card">
+              <summary>
+                <h3 class="text-xl font-bold text-brand-purple">Learning & Improvement</h3>
                 <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-learning" class="collapsible-content mt-3 text-slate-700">
+              </summary>
+              <div class="accordion-content text-slate-700">
                 <p>We leverage data-informed learning and continuous improvement to strengthen practices and systems.</p>
               </div>
-            </article>
+            </details>
 
-            <article class="collapsible-card">
-              <button class="w-full text-left collapsible-toggle flex items-center justify-between" aria-expanded="false" aria-controls="c-integrity">
-                <span><h3 class="text-xl font-bold text-brand-purple">Integrity & Ethics</h3></span>
+            <details class="accordion-card">
+              <summary>
+                <h3 class="text-xl font-bold text-brand-purple">Integrity & Ethics</h3>
                 <svg class="chev w-5 h-5 text-violet-600" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 4L14 10L6 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </button>
-              <div id="c-integrity" class="collapsible-content mt-3 text-slate-700">
+              </summary>
+              <div class="accordion-content text-slate-700">
                 <p>We commit to ethics, confidentiality, and rigorous quality assurance in all we do.</p>
               </div>
-            </article>
+            </details>
           </div>
+        </section>
+        
+        <!-- About Us Image -->
+        <section class="about-image-container">
+          <img src="b91e42c3-3c06-408a-9f23-8d58777f2a2c.png" alt="Community growth and leadership - families working together" loading="lazy" decoding="async" />
         </section>
       </div>
     </main>
@@ -181,28 +254,12 @@
           toggle.addEventListener('click', function(){
             var hidden = mobileNav.classList.toggle('hidden');
             toggle.setAttribute('aria-expanded', String(!hidden));
-            iconOpen.classList.toggle('hidden'); iconClose.classList.toggle('hidden');
+            if(iconOpen && iconClose) {
+              iconOpen.classList.toggle('hidden'); 
+              iconClose.classList.toggle('hidden');
+            }
           });
         }
-
-        // collapsible toggles with keyboard support
-        document.addEventListener('DOMContentLoaded', function(){
-          document.querySelectorAll('.collapsible-toggle').forEach(function(btn){
-            // make button keyboard-friendly
-            btn.setAttribute('role','button');
-            btn.tabIndex = 0;
-            function toggleTarget(){
-              var targetId = btn.getAttribute('aria-controls');
-              var content = document.getElementById(targetId);
-              if(!content) return;
-              var isOpen = content.classList.contains('show');
-              if(!isOpen){ content.classList.add('show'); btn.setAttribute('aria-expanded','true'); }
-              else { content.classList.remove('show'); btn.setAttribute('aria-expanded','false'); }
-            }
-            btn.addEventListener('click', toggleTarget);
-            btn.addEventListener('keydown', function(e){ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggleTarget(); } });
-          });
-        });
       })();
     </script>
 
