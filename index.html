@@ -27,6 +27,18 @@
     /* Core-value icon color (uniform orange for visibility) */
     :root { --cv-icon: #fb923c; }
     .cv-icon { color: var(--cv-icon); width:48px; height:48px; display:inline-block; }
+    /* Scroll-reveal fade-in-up animation for section wrappers */
+    :root { --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1); }
+    section > div { opacity: 0; transform: translateY(18px); }
+    section > div.fade-in-up {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 650ms var(--ease-out-quart), transform 650ms var(--ease-out-quart);
+      will-change: opacity, transform;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      section > div, section > div.fade-in-up { opacity: 1; transform: none; transition: none; }
+    }
   </style>
 </head>
   <body class="bg-white text-gray-900" data-page="home">
@@ -196,6 +208,32 @@
       }
       // mark active nav link if matches body data-page
       try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"]'); if(el) el.classList.add('font-semibold'); } }catch(e){}
+    })();
+
+    // IntersectionObserver to reveal sections on scroll
+    (function(){
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        var all = document.querySelectorAll('section > div');
+        for (var i=0; i<all.length; i++){ all[i].classList.add('fade-in-up'); }
+        return;
+      }
+      if (!('IntersectionObserver' in window)) {
+        var nodes = document.querySelectorAll('section > div');
+        for (var j=0; j<nodes.length; j++){ nodes[j].classList.add('fade-in-up'); }
+        return;
+      }
+      var observer = new IntersectionObserver(function(entries, obs){
+        for (var k=0; k<entries.length; k++){
+          var entry = entries[k];
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in-up');
+            obs.unobserve(entry.target);
+          }
+        }
+      }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+      var sections = document.querySelectorAll('section > div');
+      for (var m=0; m<sections.length; m++){ observer.observe(sections[m]); }
     })();
   </script>
 
