@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Launch Kit – 2C Destiny</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --primary:#5b21b6; /* deeper plum */
+      --accent:#8b5cf6;  /* soft lavender accent */
+      --muted:#6b7280;
+      --white:#ffffff;
+      --brand-900:#2a0b45;
+    }
+    .quote-font{font-family:'Playfair Display',serif}
+    .hero-grad{background:linear-gradient(135deg, rgba(91,33,182,0.90), rgba(139,92,246,0.85));}
+    .btn-primary{background:var(--primary);color:var(--white);padding:.6rem 1rem;border-radius:10px;text-decoration:none;font-weight:600;display:inline-flex;align-items:center;gap:.5rem}
+    .btn-outline{border:1px solid rgba(15,23,42,0.12);color:#111827;padding:.55rem .9rem;border-radius:10px;font-weight:600;background:#fff}
+
+    /* Simple toast */
+    #toast { position: fixed; top: 16px; right: 16px; z-index: 60; display:none; }
+    #toast.show { display:block; animation: fadeInOut 2.2s ease; }
+    @keyframes fadeInOut { 0%{opacity:0; transform: translateY(-6px);} 10%{opacity:1; transform:none;} 90%{opacity:1;} 100%{opacity:0; transform: translateY(-6px);} }
+
+    /* Modal helpers (focus trap borrowed from team page) */
+    .modal-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.6); display:none; align-items:center; justify-content:center; z-index:50; }
+    .modal-backdrop.open { display:flex; }
+  </style>
+</head>
+<body class="bg-white text-slate-900" data-page="launchkit">
+
+  <!-- Header / Navigation -->
+  <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
+      <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
+        <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
+        <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
+        <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Pillars</a>
+        <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Signature Programs</a>
+        <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Fatherhood</a>
+        <a data-nav-page="launchkit" href="launch-kit.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Launch Kit</a>
+        <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Contact</a>
+        <a data-nav-page="donate" href="donate.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Donate</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md text-gray-700 hover:bg-gray-50">Menu</button>
+      </div>
+    </div>
+    <div id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
+      <nav class="px-4 py-4 space-y-2">
+        <a data-nav-page="about" href="about.html" class="block text-gray-700">About</a>
+        <a data-nav-page="team" href="meet-the-team.html" class="block text-gray-700">Meet the team</a>
+        <a data-nav-page="pillars" href="pillars.html" class="block text-gray-700">Pillars</a>
+        <a data-nav-page="programs" href="signature-programs.html" class="block text-gray-700">Signature Programs</a>
+        <a data-nav-page="fatherhood" href="fatherhood.html" class="block text-gray-700">Fatherhood</a>
+        <a data-nav-page="launchkit" href="launch-kit.html" class="block text-gray-700">Launch Kit</a>
+        <a data-nav-page="contact" href="contact.html" class="block text-gray-700">Contact</a>
+        <a data-nav-page="donate" href="donate.html" class="block text-gray-700">Donate</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-grad text-white">
+    <div class="max-w-6xl mx-auto px-6 py-14 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tight">2-C Destiny Launch Kit</h1>
+      <p class="text-lg mt-2 opacity-95">Fatherhood & Family Resilience Initiative</p>
+      <p class="text-base md:text-lg text-violet-100 max-w-3xl mx-auto mt-4">
+        Ready-to-use materials for launching your trauma-aware, faith-anchored fatherhood program.
+        All content is based on documented activities, outcomes, and budget allocations.
+      </p>
+    </div>
+  </section>
+
+  <!-- Documents Grid -->
+  <main class="py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center space-y-2 mb-8">
+        <h2 class="text-3xl font-bold">Launch Kit Documents</h2>
+        <p class="text-slate-600">Four essential documents to support your funding and outreach efforts</p>
+      </div>
+
+      <div id="cards" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+
+      <div class="mt-12 p-6 bg-slate-50 rounded-lg border border-slate-200">
+        <h3 class="text-xl font-bold mb-3">About This Launch Kit</h3>
+        <div class="space-y-2 text-slate-700">
+          <p>
+            This launch kit contains four comprehensive documents designed to support your funding and
+            community engagement efforts for the Fatherhood & Family Resilience Initiative.
+          </p>
+          <p>
+            All content is strictly based on the program's Theory of Change and budget narrative, ensuring
+            transparency and accountability in all communications.
+          </p>
+          <p class="font-semibold text-slate-900 mt-4">
+            Contact: <a href="mailto:info@2cdestiny.org" class="text-violet-700 hover:underline">info@2cdestiny.org</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Modal -->
+  <div id="doc-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="doc-modal-title">
+    <div data-modal-panel tabindex="-1" class="bg-white max-w-4xl w-[92%] max-h-[85vh] overflow-hidden rounded-2xl shadow-xl outline-none">
+      <div class="border-b px-6 py-4 flex items-center justify-between">
+        <div>
+          <h3 id="doc-modal-title" class="text-2xl font-bold">Preview</h3>
+          <p class="text-slate-500 text-sm">Preview and copy the content below</p>
+        </div>
+        <button id="modal-close" class="btn-outline">Close</button>
+      </div>
+      <div class="p-6 overflow-y-auto" style="max-height: calc(85vh - 80px);">
+        <div id="doc-modal-content" class="prose prose-slate max-w-none"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="bg-slate-900 text-white px-4 py-2 rounded shadow">
+    <span id="toast-text">Copied</span>
+  </div>
+
+  <footer style="background:linear-gradient(180deg, rgba(91,33,182,0.86), rgba(139,92,246,0.72)); color:rgba(255,255,255,0.95); padding:2rem 0; margin-top:2.5rem">
+    <div class="max-w-7xl mx-auto px-4" style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap">
+      <div style="max-width:60%">
+        <strong>2C Destiny Consulting Group</strong>
+        <p style="margin:.5rem 0;color:rgba(255,255,255,0.9)">Empowering families and community partners through programs, training, and leadership development.</p>
+      </div>
+      <div style="min-width:220px;color:rgba(255,255,255,0.95)">
+        <div style="font-weight:700;margin-bottom:.4rem">Contact</div>
+        <div>📞 <a href="tel:3524809223" style="color:inherit;text-decoration:none">352-480-9223</a></div>
+        <div>✉️ <a href="mailto:info@2cdestiny.org" style="color:inherit;text-decoration:none">info@2cdestiny.org</a></div>
+        <div style="margin-top:.4rem">P.O. BOX 772862, 4545 SW 60th Ave., Ocala, FL 34474-4301</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:1rem;opacity:.95;color:rgba(255,255,255,0.9)">&copy; 2025 2C Destiny Consulting Group. All rights reserved.</div>
+  </footer>
+
+  <script>
+    // Mobile nav + active link
+    (function(){
+      var toggle = document.getElementById('mobile-menu-toggle');
+      var mobileNav = document.getElementById('mobile-nav');
+      if(toggle && mobileNav){
+        toggle.addEventListener('click', function(){ mobileNav.classList.toggle('hidden'); toggle.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden'))); });
+      }
+      try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"]'); if(el) el.classList.add('font-semibold'); } }catch(e){}
+    })();
+
+    // Focus trap helpers (from team page style)
+    var __lastFocused = null;
+    function trapFocus(container){
+      var focusable = container.querySelectorAll('a[href],button:not([disabled]),textarea,select,input,[tabindex]:not([tabindex="-1"])');
+      if(!focusable.length) return;
+      var first = focusable[0], last = focusable[focusable.length-1];
+      function keyHandler(e){
+        if(e.key !== 'Tab') return;
+        if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+        else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+      }
+      container.__keyHandler = keyHandler;
+      container.addEventListener('keydown', keyHandler);
+    }
+    function releaseFocus(container){ if(container && container.__keyHandler){ container.removeEventListener('keydown', container.__keyHandler); delete container.__keyHandler; } }
+
+    function openModal(){
+      var m = document.getElementById('doc-modal');
+      __lastFocused = document.activeElement;
+      m.classList.add('open');
+      var panel = m.querySelector('[data-modal-panel]');
+      panel && panel.setAttribute('tabindex','-1');
+      panel && panel.focus();
+      trapFocus(m);
+    }
+    function closeModal(){
+      var m = document.getElementById('doc-modal');
+      releaseFocus(m);
+      m.classList.remove('open');
+      try{ if(__lastFocused) __lastFocused.focus(); }catch(e){}
+    }
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape'){ closeModal(); } });
+    document.getElementById('doc-modal').addEventListener('click', function(e){ if(e.target === this){ closeModal(); } });
+
+    function showToast(text){
+      var t = document.getElementById('toast');
+      var span = document.getElementById('toast-text');
+      span.textContent = text;
+      t.classList.remove('show');
+      void t.offsetWidth; // restart animation
+      t.classList.add('show');
+      setTimeout(function(){ t.classList.remove('show'); }, 2200);
+    }
+
+    // ---------------------- Data ----------------------
+    const PROGRAM_NAME = 'Fatherhood & Family Resilience Initiative';
+    const ORG = '2C Destiny Consulting Group, Inc.';
+
+    const activities = [
+      'Weekly fatherhood and discipleship sessions',
+      'Biweekly mentor check-ins; monthly mentor-mentee activities',
+      'Wraparound supports (meals, transportation, childcare)',
+      'Community engagement events (kickoff and graduation)',
+      'Staff training and quality assurance/compliance',
+      'Evaluation with baseline and follow-up assessments (surveys and CRM)'
+    ];
+    const outputs = [
+      '110 fathers enrolled',
+      '100 structured sessions delivered',
+      '55 mentor–mentee matches formed',
+      '4 community events hosted annually',
+      'Over 3,000 meals provided',
+      '7 facilitators trained',
+      '≥ 80% evaluation participation rate'
+    ];
+    const shortTerm = [
+      '90% session attendance',
+      '85% report increased parenting confidence',
+      'Initial trust and rapport built between fathers and mentors'
+    ];
+    const intermediate = [
+      '70% report improved family dynamics',
+      '60% demonstrate reduced conflict behaviors',
+      '75% of mentors report participant growth'
+    ];
+    const longTerm = [
+      'Increased father presence in households',
+      'Enhanced child well-being and development',
+      'Reduced dependency on reactive social services',
+      'Established community networks sustaining fatherhood engagement'
+    ];
+    const budgetItems = {
+      'Meals & Refreshments': '$30,000',
+      'Participant Transportation': '$7,500',
+      'Recruitment & Outreach': '$3,000',
+      'Program Events': '$3,000',
+      'Mentor–Mentee Activities': '$4,000',
+      'CRM/Intake Software': '$2,000',
+      'Zoom & Cloud Subscriptions': '$1,500',
+      'Website & Communications Tools': '$1,000',
+      'Surveys & Evaluation Tools': '$500',
+      'Office Rent': '$4,800',
+      'Insurance': '$3,000',
+      'Phones & Laptops': '$12,000',
+      'Accounting Services': '$9,750'
+    };
+
+    // Helpers to build text content bodies
+    function fundingOnePagerText(){
+      return (
+`FUNDING UNLOCKS: ${PROGRAM_NAME}
+Every dollar is tied to documented activities and outcomes in our Theory of Change and budget narrative. Here is exactly what Year One funding activates:
+════════════════════════════════════════════════════════════════
+YEAR ONE OUTPUTS
+════════════════════════════════════════════════════════════════
+${outputs.map(o=>`• ${o}`).join('\n')}
+════════════════════════════════════════════════════════════════
+HOW THE INITIATIVE WORKS
+════════════════════════════════════════════════════════════════
+${activities.map(a=>`• ${a}`).join('\n')}
+════════════════════════════════════════════════════════════════
+SPONSOR WHAT MATTERS (Budget-Referenced Items)
+════════════════════════════════════════════════════════════════
+${Object.entries(budgetItems).map(([k,v])=>`• ${k}: ${v}`).join('\n')}
+════════════════════════════════════════════════════════════════
+OUTCOMES WE TRACK
+════════════════════════════════════════════════════════════════
+Short-Term (0–6 months):
+${shortTerm.map(s=>`• ${s}`).join('\n')}
+Intermediate (6–12 months):
+${intermediate.map(i=>`• ${i}`).join('\n')}
+Long-Term (1–3 years):
+${longTerm.map(l=>`• ${l}`).join('\n')}
+════════════════════════════════════════════════════════════════
+CALL TO ACTION
+════════════════════════════════════════════════════════════════
+Sponsor a session or a mentor–mentee activity. Provide transportation or host a meal night. Join our mentor corps. Make warm introductions to local supporters.
+Contact: info@2cdestiny.org`);
+    }
+
+    function outreachEmailsText(){
+      return (
+`OUTREACH EMAILS – 2C DESTINY FATHERHOOD & FAMILY RESILIENCE INITIATIVE
+════════════════════════════════════════════════════════════════
+1) DONOR / PHILANTHROPIC ALLY
+Subject: Help Us Open 110 Seats for Fathers This Year
+Hello [Name],
+We're ready to stand up the Fatherhood & Family Resilience Initiative—weekly cohorts, consistent mentoring, and wraparound supports, with evaluation from day one. With your support, we will enroll 110 fathers, deliver 100 structured sessions, form 55 mentor–mentee matches, host 4 community events, and provide over 3,000 meals while maintaining ≥80% evaluation participation.
+Your contribution directly sponsors documented activities like sessions, mentor–mentee activities, transportation, and meal nights. I've attached a two-page overview and a budget snapshot. Could we schedule a 20-minute conversation next week?
+With appreciation,
+[Your Name]
+[Title], 2C Destiny Consulting Group, Inc.
+info@2cdestiny.org
+════════════════════════════════════════════════════════════════
+2) FAITH / COMMUNITY LEADER
+Subject: Partner With Us to Equip Fathers and Strengthen Families
+Hello [Name],
+2C Destiny is launching a fatherhood initiative that pairs weekly cohorts with consistent mentoring and practical supports—meals and transportation—to remove barriers to participation. We're seeking partner sites and referral support. In Year One, we aim to enroll 110 fathers and deliver 100 sessions with evaluation at baseline and follow-up.
+Would your organization consider hosting a cohort night or helping recruit mentors? I'd value a brief call to explore how this could serve families in our shared community.
+Gratefully,
+[Your Name]
+[Title], 2C Destiny Consulting Group, Inc.
+info@2cdestiny.org
+════════════════════════════════════════════════════════════════
+3) MENTOR RECRUITMENT
+Subject: Become a Mentor—Walk With a Father This Year
+Hello [Name],
+Mentors are the heartbeat of the Fatherhood & Family Resilience Initiative. The commitment is straightforward: biweekly check-ins and monthly activities, supported by training and staff supervision. You'll be matched with a father participating in our weekly cohort, and we provide the structure, resources, and community to make the relationship sustainable.
+If you're open to learning more, reply here and we'll invite you to a 30-minute info session.
+Thank you,
+[Your Name]
+[Title], 2C Destiny Consulting Group, Inc.
+info@2cdestiny.org`);
+    }
+
+    function pressAnnouncementText(){
+      return (
+`FOR IMMEDIATE RELEASE: ${ORG} LAUNCHES THE ${PROGRAM_NAME}
+A trauma-aware, faith-anchored model to equip fathers, restore families, and strengthen community resilience.
+Contact: info@2cdestiny.org
+
+A PROVEN, READY-TO-DEPLOY MODEL
+2C Destiny Consulting Group, Inc. announces the launch of the ${PROGRAM_NAME}—a comprehensive, evidence-informed approach that brings together weekly fatherhood and discipleship cohorts, consistent mentoring, practical wraparound supports, and built-in evaluation.
+
+WHAT FUNDING IMMEDIATELY UNLOCKS
+In Year One, funding enables the following documented outputs:
+${outputs.map(o=>`• ${o}`).join('\n')}
+
+HOW THE INITIATIVE WORKS
+${activities.map(a=>`• ${a}`).join('\n')}
+
+EXPECTED OUTCOMES (PER OUR THEORY OF CHANGE)
+Short-Term (0–6 months):
+${shortTerm.map(s=>`• ${s}`).join('\n')}
+Intermediate (6–12 months):
+${intermediate.map(i=>`• ${i}`).join('\n')}
+Long-Term (1–3 years):
+${longTerm.map(l=>`• ${l}`).join('\n')}
+
+CALL TO ACTION
+2C Destiny invites partners to help sponsor sessions, mentor–mentee activities, transportation, and meal nights; join the volunteer mentor corps; and connect the initiative with local networks. Every contribution is directly tied to documented activities and outcomes.
+
+ABOUT 2C DESTINY CONSULTING GROUP, INC.
+2C Destiny equips fathers and families through culturally relevant, faith-rooted, and trauma-informed programming with transparent evaluation baked in.`);
+    }
+
+    function socialSnippetsText(){
+      return (
+`SOCIAL MEDIA SNIPPETS – 2C DESTINY FATHERHOOD & FAMILY RESILIENCE INITIATIVE
+════════════════════════════════════════════════════════════════
+SHORT SOCIAL COPY (use on any platform)
+════════════════════════════════════════════════════════════════
+• We're launching the ${PROGRAM_NAME}: weekly cohorts, mentoring, and wraparound supports—evaluation from day one. Help us open 110 seats this year. #Fatherhood #FamilyResilience #Mentorship
+• Funding = action: 100 structured sessions, 55 mentor matches, 4 community events, 3,000+ meals, and ≥80% evaluation participation. Join us. #Community #Impact
+• Mentors wanted: biweekly check-ins + monthly activities with full support from 2C Destiny. Walk with a father this year.
+• Sponsor a session or a mentor–mentee activity. Every gift ties directly to documented activities and outcomes.
+
+════════════════════════════════════════════════════════════════
+PLATFORM-SPECIFIC
+════════════════════════════════════════════════════════════════
+LINKEDIN (600–900 chars):
+2C Destiny Consulting Group is launching the ${PROGRAM_NAME}—a comprehensive, trauma-aware, faith-anchored program that equips fathers through weekly cohorts, consistent mentoring, and wraparound supports. In Year One, funding unlocks: 110 fathers enrolled, 100 structured sessions, 55 mentor–mentee matches, 4 community events, 3,000+ meals, and ≥80% evaluation participation. The model includes staff training/QA and baseline/follow-up assessment using surveys and CRM. We're inviting partners to sponsor sessions, mentor activities, transportation, and meal nights—and to refer mentors and fathers. Ready to help us open 110 seats this year?
+
+TWITTER/X (max 280 chars):
+We're launching ${PROGRAM_NAME}: weekly cohorts, mentoring, wraparound supports, and evaluation from day one. Funding unlocks 110 seats, 100 sessions, 55 mentor matches, 4 events, 3,000+ meals, ≥80% eval participation. Join us. #Fatherhood #Community
+
+INSTAGRAM/FACEBOOK (short + CTA):
+Launch time! The ${PROGRAM_NAME} pairs weekly cohorts with mentoring, meals, and transportation—so fathers can show up and grow. With support we'll open 110 seats, deliver 100 sessions, form 55 mentor matches, and host 4 community events. Sponsor a session or mentor activity today.
+
+════════════════════════════════════════════════════════════════
+HASHTAG SUGGESTIONS
+════════════════════════════════════════════════════════════════
+#Fatherhood #FamilyResilience #Mentorship #CommunityImpact #FaithBased #TraumaInformed #2CDestiny #DadsInCommunity #FatherEngagement #StrongerFamilies`);
+    }
+
+    // ---------------------- Previews (HTML) ----------------------
+    function el(tag, cls, html){ const d=document.createElement(tag); if(cls) d.className=cls; if(html!==undefined) d.innerHTML=html; return d; }
+
+    function fundingOnePagerPreview(){
+      const root = el('div','space-y-6');
+      const header = el('div','text-center pb-4 border-b');
+      header.innerHTML = `
+        <h1 class="text-2xl font-bold mb-2">Funding Unlocks: ${PROGRAM_NAME}</h1>
+        <p class="text-slate-600 italic">Every dollar is tied to documented activities and outcomes in our Theory of Change and budget narrative.</p>
+      `;
+      root.appendChild(header);
+
+      const outputsSec = el('section');
+      outputsSec.innerHTML = `
+        <h2 class="text-xl font-bold mb-3 text-violet-700">Year One Outputs</h2>
+        <ul class="list-disc list-inside space-y-1 text-slate-600">${outputs.map(o=>`<li>${o}</li>`).join('')}</ul>
+      `;
+      root.appendChild(outputsSec);
+
+      const howSec = el('section');
+      howSec.innerHTML = `
+        <h2 class="text-xl font-bold mb-3 text-violet-700">How the Initiative Works</h2>
+        <ul class="list-disc list-inside space-y-1 text-slate-600">${activities.map(a=>`<li>${a}</li>`).join('')}</ul>
+      `;
+      root.appendChild(howSec);
+
+      const budgetSec = el('section');
+      budgetSec.innerHTML = `
+        <h2 class="text-xl font-bold mb-3 text-violet-700">Sponsor What Matters</h2>
+        <p class="text-sm text-slate-500 mb-3">(Budget-Referenced Items)</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          ${Object.entries(budgetItems).map(([k,v])=>`
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200">
+              <div class="font-semibold text-sm">${k}</div>
+              <div class="text-violet-700 font-bold text-lg">${v}</div>
+            </div>`).join('')}
+        </div>
+      `;
+      root.appendChild(budgetSec);
+
+      const outcomesSec = el('section');
+      outcomesSec.innerHTML = `
+        <h2 class="text-xl font-bold mb-3 text-violet-700">Outcomes We Track</h2>
+        <div class="space-y-4">
+          <div class="p-4 bg-fuchsia-50 rounded-lg border-l-4 border-fuchsia-400">
+            <h3 class="font-semibold mb-2">Short-Term (0–6 months):</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-600">${shortTerm.map(s=>`<li>${s}</li>`).join('')}</ul>
+          </div>
+          <div class="p-4 bg-violet-50 rounded-lg border-l-4 border-violet-500">
+            <h3 class="font-semibold mb-2">Intermediate (6–12 months):</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-600">${intermediate.map(i=>`<li>${i}</li>`).join('')}</ul>
+          </div>
+          <div class="p-4 bg-indigo-50 rounded-lg border-l-4 border-indigo-400">
+            <h3 class="font-semibold mb-2">Long-Term (1–3 years):</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-600">${longTerm.map(l=>`<li>${l}</li>`).join('')}</ul>
+          </div>
+        </div>
+      `;
+      root.appendChild(outcomesSec);
+
+      const cta = el('section','p-6 bg-gradient-to-br from-violet-50 to-fuchsia-50 rounded-lg border-2 border-violet-200');
+      cta.innerHTML = `
+        <h2 class="text-xl font-bold mb-3 text-violet-700">Call to Action</h2>
+        <p class="text-slate-600 mb-4">
+          Sponsor a session or a mentor–mentee activity. Provide transportation or host a meal night.
+          Join our mentor corps. Make warm introductions to local supporters.
+        </p>
+        <p class="font-semibold">Contact: <a href="mailto:info@2cdestiny.org" class="text-violet-700 hover:underline">info@2cdestiny.org</a></p>
+      `;
+      root.appendChild(cta);
+
+      return root.outerHTML;
+    }
+
+    function pressPreview(){
+      const root = el('div','space-y-6');
+      const header = el('div','text-center border-b pb-4');
+      header.innerHTML = `
+        <h1 class="text-2xl font-bold mb-2">For Immediate Release: ${ORG} Launches the ${PROGRAM_NAME}</h1>
+        <p class="text-slate-600 italic">A trauma-aware, faith-anchored model to equip fathers, restore families, and strengthen community resilience.</p>
+        <p class="text-sm mt-4">Contact: info@2cdestiny.org</p>
+      `;
+      root.appendChild(header);
+
+      const model = el('section');
+      model.innerHTML = `
+        <h2 class="text-xl font-bold mb-3">A Proven, Ready-to-Deploy Model</h2>
+        <p class="text-slate-700">
+          2C Destiny Consulting Group, Inc. announces the launch of the ${PROGRAM_NAME}—a comprehensive,
+          evidence-informed approach that brings together weekly fatherhood and discipleship cohorts,
+          consistent mentoring, practical wraparound supports, and built-in evaluation.
+        </p>`;
+      root.appendChild(model);
+
+      const unlocks = el('section');
+      unlocks.innerHTML = `
+        <h2 class="text-xl font-bold mb-3">What Funding Immediately Unlocks</h2>
+        <p class="mb-2">In Year One, funding enables the following documented outputs:</p>
+        <ul class="list-disc list-inside space-y-1 text-slate-600">${outputs.map(o=>`<li>${o}</li>`).join('')}</ul>`;
+      root.appendChild(unlocks);
+
+      const how = el('section');
+      how.innerHTML = `
+        <h2 class="text-xl font-bold mb-3">How the Initiative Works</h2>
+        <ul class="list-disc list-inside space-y-1 text-slate-600">${activities.map(a=>`<li>${a}</li>`).join('')}</ul>`;
+      root.appendChild(how);
+
+      const outcomes = el('section');
+      outcomes.innerHTML = `
+        <h2 class="text-xl font-bold mb-3">Expected Outcomes (per our Theory of Change)</h2>
+        <div class="space-y-3">
+          <div>
+            <h3 class="font-semibold mb-1">Short-Term (0–6 months):</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-600">${shortTerm.map(s=>`<li>${s}</li>`).join('')}</ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Intermediate (6–12 months):</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-600">${intermediate.map(i=>`<li>${i}</li>`).join('')}</ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-1">Long-Term (1–3 years):</h3>
+            <ul class="list-disc list-inside space-y-1 text-slate-600">${longTerm.map(l=>`<li>${l}</li>`).join('')}</ul>
+          </div>
+        </div>`;
+      root.appendChild(outcomes);
+
+      const call = el('section');
+      call.innerHTML = `
+        <h2 class="text-xl font-bold mb-3">Call to Action</h2>
+        <p class="text-slate-700">
+          2C Destiny invites partners to help sponsor sessions, mentor–mentee activities, transportation,
+          and meal nights; join the volunteer mentor corps; and connect the initiative with local networks.
+          Every contribution is directly tied to documented activities and outcomes.
+        </p>`;
+      root.appendChild(call);
+
+      const about = el('section','border-t pt-4');
+      about.innerHTML = `
+        <h3 class="font-semibold mb-2">About 2C Destiny Consulting Group, Inc.</h3>
+        <p class="text-slate-700">2C Destiny equips fathers and families through culturally relevant, faith-rooted, and trauma-informed programming with transparent evaluation baked in.</p>`;
+      root.appendChild(about);
+
+      return root.outerHTML;
+    }
+
+    function outreachPreview(){
+      const emails = [
+        {
+          title: '1) Donor / Philanthropic Ally',
+          subject: 'Help Us Open 110 Seats for Fathers This Year',
+          body: `We're ready to stand up the Fatherhood & Family Resilience Initiative—weekly cohorts, consistent mentoring, and wraparound supports, with evaluation from day one. With your support, we will enroll 110 fathers, deliver 100 structured sessions, form 55 mentor–mentee matches, host 4 community events, and provide over 3,000 meals while maintaining ≥80% evaluation participation.\n\nYour contribution directly sponsors documented activities like sessions, mentor–mentee activities, transportation, and meal nights. I've attached a two-page overview and a budget snapshot. Could we schedule a 20-minute conversation next week?\n\nWith appreciation,\n[Your Name]\n[Title], 2C Destiny Consulting Group, Inc.\ninfo@2cdestiny.org`
+        },
+        {
+          title: '2) Faith / Community Leader',
+          subject: 'Partner With Us to Equip Fathers and Strengthen Families',
+          body: `2C Destiny is launching a fatherhood initiative that pairs weekly cohorts with consistent mentoring and practical supports—meals and transportation—to remove barriers to participation. We're seeking partner sites and referral support. In Year One, we aim to enroll 110 fathers and deliver 100 sessions with evaluation at baseline and follow-up.\n\nWould your organization consider hosting a cohort night or helping recruit mentors? I'd value a brief call to explore how this could serve families in our shared community.\n\nGratefully,\n[Your Name]\n[Title], 2C Destiny Consulting Group, Inc.\ninfo@2cdestiny.org`
+        },
+        {
+          title: '3) Mentor Recruitment',
+          subject: 'Become a Mentor—Walk With a Father This Year',
+          body: `Mentors are the heartbeat of the Fatherhood & Family Resilience Initiative. The commitment is straightforward: biweekly check-ins and monthly activities, supported by training and staff supervision. You'll be matched with a father participating in our weekly cohort, and we provide the structure, resources, and community to make the relationship sustainable.\n\nIf you're open to learning more, reply here and we'll invite you to a 30-minute info session.\n\nThank you,\n[Your Name]\n[Title], 2C Destiny Consulting Group, Inc.\ninfo@2cdestiny.org`
+        }
+      ];
+
+      const root = el('div','space-y-6');
+      const title = el('h1','text-2xl font-bold text-center pb-4 border-b','Outreach Emails – 2C Destiny Fatherhood & Family Resilience Initiative');
+      root.appendChild(title);
+
+      emails.forEach((email)=>{
+        const card = el('div','border rounded-lg p-4 space-y-3');
+        card.innerHTML = `
+          <h2 class="text-xl font-bold text-violet-700">${email.title}</h2>
+          <div class="bg-slate-50 p-3 rounded">
+            <span class="font-semibold">Subject: </span>
+            <span class="text-slate-600">${email.subject}</span>
+          </div>
+          <div class="whitespace-pre-line text-slate-700">
+            Hello [Name],\n\n${email.body}
+          </div>`;
+        root.appendChild(card);
+      });
+
+      return root.outerHTML;
+    }
+
+    function socialPreview(){
+      const root = el('div','space-y-6');
+      root.appendChild(el('h1','text-2xl font-bold text-center pb-4 border-b','Social Media Snippets – 2C Destiny Fatherhood & Family Resilience Initiative'));
+
+      const shortSec = el('section','space-y-4');
+      shortSec.innerHTML = `
+        <h2 class="text-xl font-bold text-violet-700">Short Social Copy (use on any platform)</h2>
+        <div class="space-y-3">
+          ${[
+            `We're launching the ${PROGRAM_NAME}: weekly cohorts, mentoring, and wraparound supports—evaluation from day one. Help us open 110 seats this year. #Fatherhood #FamilyResilience #Mentorship`,
+            'Funding = action: 100 structured sessions, 55 mentor matches, 4 community events, 3,000+ meals, and ≥80% evaluation participation. Join us. #Community #Impact',
+            'Mentors wanted: biweekly check-ins + monthly activities with full support from 2C Destiny. Walk with a father this year.',
+            'Sponsor a session or a mentor–mentee activity. Every gift ties directly to documented activities and outcomes.'
+          ].map(snippet=>`<div class=\"p-4 bg-slate-50 rounded-lg border-l-4 border-violet-500\"><p class=\"text-slate-700\">${snippet}</p></div>`).join('')}
+        </div>`;
+      root.appendChild(shortSec);
+
+      const platformSec = el('section','space-y-4');
+      platformSec.innerHTML = `
+        <h2 class="text-xl font-bold text-violet-700">Platform-Specific</h2>
+        <div class="space-y-4">
+          <div class="border rounded-lg p-4">
+            <h3 class="font-bold mb-2 flex items-center gap-2"><span class="text-fuchsia-600">LinkedIn</span><span class="text-xs text-slate-500">(600–900 chars)</span></h3>
+            <p class="text-slate-700">2C Destiny Consulting Group is launching the ${PROGRAM_NAME}—a comprehensive, trauma-aware, faith-anchored program that equips fathers through weekly cohorts, consistent mentoring, and wraparound supports. In Year One, funding unlocks: 110 fathers enrolled, 100 structured sessions, 55 mentor–mentee matches, 4 community events, 3,000+ meals, and ≥80% evaluation participation. The model includes staff training/QA and baseline/follow-up assessment using surveys and CRM. We're inviting partners to sponsor sessions, mentor activities, transportation, and meal nights—and to refer mentors and fathers. Ready to help us open 110 seats this year?</p>
+          </div>
+          <div class="border rounded-lg p-4">
+            <h3 class="font-bold mb-2 flex items-center gap-2"><span class="text-fuchsia-600">Twitter/X</span><span class="text-xs text-slate-500">(max 280 chars)</span></h3>
+            <p class="text-slate-700">We're launching ${PROGRAM_NAME}: weekly cohorts, mentoring, wraparound supports, and evaluation from day one. Funding unlocks 110 seats, 100 sessions, 55 mentor matches, 4 events, 3,000+ meals, ≥80% eval participation. Join us. #Fatherhood #Community</p>
+          </div>
+          <div class="border rounded-lg p-4">
+            <h3 class="font-bold mb-2 flex items-center gap-2"><span class="text-fuchsia-600">Instagram/Facebook</span><span class="text-xs text-slate-500">(short + CTA)</span></h3>
+            <p class="text-slate-700">Launch time! The ${PROGRAM_NAME} pairs weekly cohorts with mentoring, meals, and transportation—so fathers can show up and grow. With support we'll open 110 seats, deliver 100 sessions, form 55 mentor matches, and host 4 community events. Sponsor a session or mentor activity today.</p>
+          </div>
+        </div>`;
+      root.appendChild(platformSec);
+
+      const tags = ['#Fatherhood','#FamilyResilience','#Mentorship','#CommunityImpact','#FaithBased','#TraumaInformed','#2CDestiny','#DadsInCommunity','#FatherEngagement','#StrongerFamilies'];
+      const tagsSec = el('section','space-y-4');
+      tagsSec.innerHTML = `
+        <h2 class="text-xl font-bold text-violet-700">Hashtag Suggestions</h2>
+        <div class="flex flex-wrap gap-2">${tags.map(t=>`<span class=\"px-3 py-1 bg-violet-50 text-violet-700 rounded-full text-sm font-medium\">${t}</span>`).join('')}</div>`;
+      root.appendChild(tagsSec);
+
+      return root.outerHTML;
+    }
+
+    // ---------------------- Cards and actions ----------------------
+    const docs = [
+      {
+        id: 'press',
+        title: 'Press Announcement',
+        description: 'For Immediate Release: Launch announcement with program overview and outcomes',
+        icon: 'file',
+        content: pressAnnouncementText,
+        previewHtml: pressPreview,
+        filename: 'Press_Announcement_2C_Destiny.txt'
+      },
+      {
+        id: 'emails',
+        title: 'Outreach Emails',
+        description: 'Email templates for donors, community leaders, and mentor recruitment',
+        icon: 'mail',
+        content: outreachEmailsText,
+        previewHtml: outreachPreview,
+        filename: 'Outreach_Emails_2C_Destiny.txt'
+      },
+      {
+        id: 'social',
+        title: 'Social Media Snippets',
+        description: 'Platform-specific content for LinkedIn, Twitter/X, Instagram, and Facebook',
+        icon: 'share',
+        content: socialSnippetsText,
+        previewHtml: socialPreview,
+        filename: 'Social_Snippets_2C_Destiny.txt'
+      },
+      {
+        id: 'funding',
+        title: 'Funding Unlocks One-Pager',
+        description: 'Complete overview of outputs, activities, budget items, and outcomes',
+        icon: 'dollar',
+        content: fundingOnePagerText,
+        previewHtml: fundingOnePagerPreview,
+        filename: 'Funding_Unlocks_2C_Destiny.txt'
+      }
+    ];
+
+    function iconSvg(kind){
+      if(kind==='mail') return '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7l9 6 9-6"/><path stroke-linecap="round" stroke-linejoin="round" d="M21 7v10a2 2 0 01-2 2H5a2 2 0 01-2-2V7"/></svg>';
+      if(kind==='share') return '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 12v7a1 1 0 001 1h14a1 1 0 001-1v-7"/><path stroke-linecap="round" stroke-linejoin="round" d="M16 6l-4-4-4 4"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v14"/></svg>';
+      if(kind==='dollar') return '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-2.21 0-4 1.12-4 2.5S9.79 13 12 13s4 1.12 4 2.5S14.21 18 12 18m0-10V2m0 20v-4"/></svg>';
+      return '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v14H4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M4 9h16"/></svg>';
+    }
+
+    function handleView(doc){
+      document.getElementById('doc-modal-title').textContent = doc.title;
+      document.getElementById('doc-modal-content').innerHTML = doc.previewHtml();
+      openModal();
+    }
+    function handleCopy(doc){
+      navigator.clipboard.writeText(doc.content()).then(()=>{
+        showToast('Copied to clipboard!');
+      }).catch(()=> showToast('Copy failed'));
+    }
+    function handleDownload(doc){
+      const blob = new Blob([doc.content()], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = doc.filename; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast('Download started!');
+    }
+
+    // Render cards
+    const cards = document.getElementById('cards');
+    docs.forEach((doc)=>{
+      const card = el('div','transition shadow-sm hover:shadow-xl border border-slate-200 rounded-xl');
+      const header = el('div','px-5 py-4 border-b flex items-start justify-between');
+      header.innerHTML = `
+        <div class="flex items-center gap-3">
+          <div class="p-2 rounded-lg bg-violet-100 text-violet-700">${iconSvg(doc.icon)}</div>
+          <div>
+            <div class="text-xl font-semibold">${doc.title}</div>
+            <div class="text-slate-600 mt-1 text-sm">${doc.description}</div>
+          </div>
+        </div>`;
+      const content = el('div','px-5 py-4');
+      const btns = el('div','flex flex-wrap gap-2');
+      const view = el('button','btn-primary','<span>View</span>');
+      view.addEventListener('click', ()=>handleView(doc));
+      const copy = el('button','btn-outline','Copy');
+      copy.addEventListener('click', ()=>handleCopy(doc));
+      const download = el('button','btn-outline','Download');
+      download.addEventListener('click', ()=>handleDownload(doc));
+      btns.appendChild(view); btns.appendChild(copy); btns.appendChild(download);
+      content.appendChild(btns);
+      card.appendChild(header);
+      card.appendChild(content);
+      cards.appendChild(card);
+    });
+  </script>
+</body>
+</html>
