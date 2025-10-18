@@ -1,0 +1,284 @@
+from docx import Document
+from docx.shared import Pt
+from docx.enum.text import WD_ALIGN_PARAGRAPH
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
+import os
+
+# ---------------------- Shared content from user's materials ----------------------
+PROGRAM_NAME = "Fatherhood & Family Resilience Initiative"
+ORG = "2C Destiny Consulting Group, Inc."
+
+# Core activities (from Theory of Change)
+activities = [
+    "Weekly fatherhood and discipleship sessions",
+    "Biweekly mentor check-ins; monthly mentor-mentee activities",
+    "Wraparound supports (meals, transportation, childcare)",
+    "Community engagement events (kickoff and graduation)",
+    "Staff training and quality assurance/compliance",
+    "Evaluation with baseline and follow-up assessments (surveys and CRM)",
+]
+
+# Outputs and indicators (from Theory of Change)
+outputs = [
+    "110 fathers enrolled",
+    "100 structured sessions delivered",
+    "55 mentor–mentee matches formed",
+    "4 community events hosted annually",
+    "Over 3,000 meals provided",
+    "7 facilitators trained",
+    "≥ 80% evaluation participation rate"
+]
+
+short_term = [
+    "90% session attendance",
+    "85% report increased parenting confidence",
+    "Initial trust and rapport built between fathers and mentors"
+]
+
+intermediate = [
+    "70% report improved family dynamics",
+    "60% demonstrate reduced conflict behaviors",
+    "75% of mentors report participant growth"
+]
+
+long_term = [
+    "Increased father presence in households",
+    "Enhanced child well-being and development",
+    "Reduced dependency on reactive social services",
+    "Established community networks sustaining fatherhood engagement"
+]
+
+# Budget items from narrative (exact figures where provided)
+budget_items = {
+    "Meals & Refreshments": "$30,000",
+    "Participant Transportation": "$7,500",
+    "Recruitment & Outreach": "$3,000",
+    "Program Events": "$3,000",
+    "Mentor–Mentee Activities": "$4,000",
+    "CRM/Intake Software": "$2,000",
+    "Zoom & Cloud Subscriptions": "$1,500",
+    "Website & Communications Tools": "$1,000",
+    "Surveys & Evaluation Tools": "$500",
+    "Office Rent": "$4,800",
+    "Insurance": "$3,000",
+    "Phones & Laptops": "$12,000",
+    "Accounting Services": "$9,750"
+}
+
+# Ensure output directory
+OUTPUT_DIR = "/workspace/LaunchKit"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# ---------------------- 1) Press Announcement (DOCX) ----------------------
+press_path = os.path.join(OUTPUT_DIR, "Press_Announcement.docx")
+doc = Document()
+doc.styles['Normal'].font.name = 'Calibri'
+doc.styles['Normal'].font.size = Pt(11)
+
+title = doc.add_heading(f"For Immediate Release: {ORG} Launches the {PROGRAM_NAME}", level=1)
+title.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+subtitle = doc.add_paragraph("A trauma-aware, faith-anchored model to equip fathers, restore families, and strengthen community resilience.")
+subtitle.alignment = WD_ALIGN_PARAGRAPH.CENTER
+
+doc.add_paragraph("\nContact: info@2cdestiny.org\n")
+
+doc.add_heading("A Proven, Ready-to-Deploy Model", level=2)
+doc.add_paragraph(
+    "2C Destiny Consulting Group, Inc. announces the launch of the Fatherhood & Family Resilience Initiative—a comprehensive, evidence-informed approach that brings together weekly fatherhood and discipleship cohorts, consistent mentoring, practical wraparound supports, and built-in evaluation."
+)
+
+doc.add_heading("What Funding Immediately Unlocks", level=2)
+doc.add_paragraph("In Year One, funding enables the following documented outputs:")
+for o in outputs:
+    doc.add_paragraph(f"• {o}")
+
+
+doc.add_heading("How the Initiative Works", level=2)
+for a in activities:
+    doc.add_paragraph(f"• {a}")
+
+
+doc.add_heading("Expected Outcomes (per our Theory of Change)", level=2)
+doc.add_paragraph("Short-Term (0–6 months):")
+for s in short_term:
+    doc.add_paragraph(f"• {s}")
+doc.add_paragraph("Intermediate (6–12 months):")
+for i in intermediate:
+    doc.add_paragraph(f"• {i}")
+doc.add_paragraph("Long-Term (1–3 years):")
+for l in long_term:
+    doc.add_paragraph(f"• {l}")
+
+
+doc.add_heading("Call to Action", level=2)
+doc.add_paragraph(
+    "2C Destiny invites partners to help sponsor sessions, mentor–mentee activities, transportation, and meal nights; join the volunteer mentor corps; and connect the initiative with local networks. "
+    "Every contribution is directly tied to documented activities and outcomes."
+)
+
+doc.add_paragraph("\nAbout 2C Destiny Consulting Group, Inc.\n2C Destiny equips fathers and families through culturally relevant, faith-rooted, and trauma-informed programming with transparent evaluation baked in.\n")
+
+
+doc.save(press_path)
+
+# ---------------------- 2) Outreach Emails (DOCX) ----------------------
+emails_path = os.path.join(OUTPUT_DIR, "Outreach_Emails.docx")
+em = Document()
+em.styles['Normal'].font.name = 'Calibri'
+em.styles['Normal'].font.size = Pt(11)
+
+em.add_heading("Outreach Emails – 2C Destiny Fatherhood & Family Resilience Initiative", level=1)
+
+# Donor outreach
+em.add_heading("1) Donor / Philanthropic Ally", level=2)
+em.add_paragraph(
+    "Subject: Help Us Open 110 Seats for Fathers This Year\n\n"
+    "Hello [Name],\n\n"
+    "We’re ready to stand up the Fatherhood & Family Resilience Initiative—weekly cohorts, consistent mentoring, and wraparound supports, with evaluation from day one. "
+    "With your support, we will enroll 110 fathers, deliver 100 structured sessions, form 55 mentor–mentee matches, host 4 community events, and provide over 3,000 meals while maintaining ≥80% evaluation participation.\n\n"
+    "Your contribution directly sponsors documented activities like sessions, mentor–mentee activities, transportation, and meal nights. "
+    "I’ve attached a two-page overview and a budget snapshot. Could we schedule a 20-minute conversation next week?\n\n"
+    "With appreciation,\n[Your Name]\n[Title], 2C Destiny Consulting Group, Inc.\ninfo@2cdestiny.org"
+)
+
+# Faith/community leader outreach
+em.add_heading("2) Faith / Community Leader", level=2)
+em.add_paragraph(
+    "Subject: Partner With Us to Equip Fathers and Strengthen Families\n\n"
+    "Hello [Name],\n\n"
+    "2C Destiny is launching a fatherhood initiative that pairs weekly cohorts with consistent mentoring and practical supports—meals and transportation—to remove barriers to participation. "
+    "We’re seeking partner sites and referral support. In Year One, we aim to enroll 110 fathers and deliver 100 sessions with evaluation at baseline and follow-up.\n\n"
+    "Would your organization consider hosting a cohort night or helping recruit mentors? I’d value a brief call to explore how this could serve families in our shared community.\n\n"
+    "Gratefully,\n[Your Name]\n[Title], 2C Destiny Consulting Group, Inc.\ninfo@2cdestiny.org"
+)
+
+# Mentor recruitment
+em.add_heading("3) Mentor Recruitment", level=2)
+em.add_paragraph(
+    "Subject: Become a Mentor—Walk With a Father This Year\n\n"
+    "Hello [Name],\n\n"
+    "Mentors are the heartbeat of the Fatherhood & Family Resilience Initiative. The commitment is straightforward: biweekly check-ins and monthly activities, supported by training and staff supervision. "
+    "You’ll be matched with a father participating in our weekly cohort, and we provide the structure, resources, and community to make the relationship sustainable.\n\n"
+    "If you’re open to learning more, reply here and we’ll invite you to a 30-minute info session.\n\n"
+    "Thank you,\n[Your Name]\n[Title], 2C Destiny Consulting Group, Inc.\ninfo@2cdestiny.org"
+)
+
+em.save(emails_path)
+
+# ---------------------- 3) Social Snippets (TXT) ----------------------
+social_path = os.path.join(OUTPUT_DIR, "Social_Snippets.txt")
+social_text = f"""
+SHORT SOCIAL COPY (use on any platform)
+
+• We’re launching the {PROGRAM_NAME}: weekly cohorts, mentoring, and wraparound supports—evaluation from day one. Help us open 110 seats this year. #Fatherhood #FamilyResilience #Mentorship
+
+• Funding = action: 100 structured sessions, 55 mentor matches, 4 community events, 3,000+ meals, and ≥80% evaluation participation. Join us. #Community #Impact
+
+• Mentors wanted: biweekly check-ins + monthly activities with full support from 2C Destiny. Walk with a father this year.
+
+• Sponsor a session or a mentor–mentee activity. Every gift ties directly to documented activities and outcomes.
+
+
+PLATFORM-SPECIFIC
+
+LinkedIn (600–900 chars):
+2C Destiny Consulting Group is launching the {PROGRAM_NAME}—a comprehensive, trauma-aware, faith-anchored program that equips fathers through weekly cohorts, consistent mentoring, and wraparound supports. In Year One, funding unlocks: 110 fathers enrolled, 100 structured sessions, 55 mentor–mentee matches, 4 community events, 3,000+ meals, and ≥80% evaluation participation. The model includes staff training/QA and baseline/follow-up assessment using surveys and CRM. We’re inviting partners to sponsor sessions, mentor activities, transportation, and meal nights—and to refer mentors and fathers. Ready to help us open 110 seats this year?
+
+Twitter/X (max 280 chars):
+We’re launching {PROGRAM_NAME}: weekly cohorts, mentoring, wraparound supports, and evaluation from day one. Funding unlocks 110 seats, 100 sessions, 55 mentor matches, 4 events, 3,000+ meals, ≥80% eval participation. Join us. #Fatherhood #Community
+
+Instagram/Facebook (short + CTA):
+Launch time! The {PROGRAM_NAME} pairs weekly cohorts with mentoring, meals, and transportation—so fathers can show up and grow. With support we’ll open 110 seats, deliver 100 sessions, form 55 mentor matches, and host 4 community events. Sponsor a session or mentor activity today.
+"""
+with open(social_path, "w", encoding="utf-8") as f:
+    f.write(social_text.strip())
+
+# ---------------------- 4) Funding Unlocks One-Pager (PDF) ----------------------
+pdf_path = os.path.join(OUTPUT_DIR, "Funding_Unlocks_OnePager.pdf")
+c = canvas.Canvas(pdf_path, pagesize=letter)
+width, height = letter
+
+
+def draw_wrapped(c, text, x, y, max_width, font="Helvetica", size=11, leading=14):
+    from reportlab.pdfbase import pdfmetrics
+    c.setFont(font, size)
+    words = text.split()
+    line = ""
+    while words:
+        w = words.pop(0)
+        test = (line + " " + w).strip()
+        if pdfmetrics.stringWidth(test, font, size) <= max_width:
+            line = test
+        else:
+            c.drawString(x, y, line)
+            y -= leading
+            line = w
+    if line:
+        c.drawString(x, y, line)
+        y -= leading
+    return y
+
+margin = 56
+y = height - margin
+c.setFont("Helvetica-Bold", 16)
+c.drawString(margin, y, f"Funding Unlocks: {PROGRAM_NAME}")
+y -= 24
+c.setFont("Helvetica", 11)
+y = draw_wrapped(c, "Every dollar is tied to documented activities and outcomes in our Theory of Change and budget narrative. Here is exactly what Year One funding activates:", margin, y, width - 2*margin)
+
+# Outputs
+c.setFont("Helvetica-Bold", 12)
+c.drawString(margin, y, "Year One Outputs")
+y -= 16
+c.setFont("Helvetica", 11)
+for o in outputs:
+    y = draw_wrapped(c, f"• {o}", margin, y, width - 2*margin)
+
+# Activities
+c.setFont("Helvetica-Bold", 12)
+c.drawString(margin, y, "How the Initiative Works")
+y -= 16
+c.setFont("Helvetica", 11)
+for a in activities:
+    y = draw_wrapped(c, f"• {a}", margin, y, width - 2*margin)
+
+# Budget-aligned sponsorable items (using exact figures from the budget narrative)
+c.setFont("Helvetica-Bold", 12)
+c.drawString(margin, y, "Sponsor What Matters (Budget-Referenced Items)")
+y -= 16
+c.setFont("Helvetica", 11)
+for k, v in budget_items.items():
+    y = draw_wrapped(c, f"• {k}: {v}", margin, y, width - 2*margin)
+
+# Outcomes
+c.setFont("Helvetica-Bold", 12)
+c.drawString(margin, y, "Outcomes We Track")
+y -= 16
+c.setFont("Helvetica", 11)
+y = draw_wrapped(c, "Short-Term (0–6 months):", margin, y, width - 2*margin)
+for s in short_term:
+    y = draw_wrapped(c, f"• {s}", margin, y, width - 2*margin)
+y = draw_wrapped(c, "Intermediate (6–12 months):", margin, y, width - 2*margin)
+for i in intermediate:
+    y = draw_wrapped(c, f"• {i}", margin, y, width - 2*margin)
+y = draw_wrapped(c, "Long-Term (1–3 years):", margin, y, width - 2*margin)
+for l in long_term:
+    y = draw_wrapped(c, f"• {l}", margin, y, width - 2*margin)
+
+# CTA
+c.setFont("Helvetica-Bold", 12)
+c.drawString(margin, y, "Call to Action")
+y -= 16
+c.setFont("Helvetica", 11)
+y = draw_wrapped(c, "Sponsor a session or a mentor–mentee activity. Provide transportation or host a meal night. Join our mentor corps. Make warm introductions to local supporters. Contact: info@2cdestiny.org", margin, y, width - 2*margin)
+
+c.save()
+
+print({
+    "press_docx": press_path,
+    "emails_docx": emails_path,
+    "social_txt": social_path,
+    "funding_pdf": pdf_path
+})
