@@ -83,34 +83,25 @@
   </div>
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white px-2 py-1 rounded">Skip to main content</a>
 
-  <!-- Standard header: consistent across site -->
-  <header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-      <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.15rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
-      <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
-        <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
-        <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
-        <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Pillars</a>
-        <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Signature Programs</a>
-        <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Fatherhood</a>
-        <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Contact</a>
-        <a data-nav-page="donate" href="donate.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Donate</a>
-      </nav>
-      <div class="md:hidden">
-        <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md text-gray-700 hover:bg-gray-50">Menu</button>
-      </div>
-    </div>
-    <div id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
-      <nav class="px-4 py-4 space-y-2">
-        <a href="about.html" class="block text-gray-700">About</a>
-        <a href="meet-the-team.html" class="block text-gray-700">Meet the team</a>
-        <a href="pillars.html" class="block text-gray-700">Pillars</a>
-        <a href="signature-programs.html" class="block text-gray-700">Signature Programs</a>
-        <a href="fatherhood.html" class="block text-gray-700">Fatherhood</a>
-        <a href="contact.html" class="block text-gray-700">Contact</a>
-        <a href="donate.html" class="block text-gray-700">Donate</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="index.html" class="site-brand" aria-label="2C Destiny Consulting Group">
+        <span class="site-brand-icon" aria-hidden="true">
+          <img src="assets/2c-destiny-icon.svg" alt="" aria-hidden="true">
+        </span>
+        <span class="site-brand-text">2C Destiny Consulting Group</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a data-nav-page="about" href="about.html">About</a>
+        <a data-nav-page="team" href="meet-the-team.html">Meet the team</a>
+        <a data-nav-page="pillars" href="pillars.html">Pillars</a>
+        <a data-nav-page="programs" href="signature-programs.html">Signature Programs</a>
+        <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
+        <a data-nav-page="contact" href="contact.html">Contact</a>
+        <a data-nav-page="donate" href="donate.html">Donate</a>
       </nav>
     </div>
+  </header>
 
   <main id="main" class="py-16 page-accent">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">

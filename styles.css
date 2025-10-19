@@ -1,0 +1,146 @@
+:root {
+  --brand-900: #312e81;
+  --brand-800: #4338ca;
+  --brand-700: #5b21b6;
+  --brand-600: #6d28d9;
+  --brand-500: #7c3aed;
+  --brand-100: #ede9fe;
+  --brand-50: #f5f3ff;
+}
+
+.site-header {
+  background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02));
+  border-bottom: 1px solid rgba(15,23,42,0.06);
+}
+
+.site-header-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.5rem 1.5rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-700);
+  text-decoration: none;
+}
+
+.site-brand:hover,
+.site-brand:focus-visible {
+  color: var(--brand-600);
+}
+
+.site-brand-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: inline-block;
+}
+
+.site-brand-icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.site-nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(91,33,182,0.08);
+}
+
+.site-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  padding: 0.85rem 1rem;
+  border-radius: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #374151;
+  background: rgba(91,33,182,0.06);
+  transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: rgba(91,33,182,0.12);
+  color: var(--brand-700);
+}
+
+.site-nav a.active {
+  background: rgba(91,33,182,0.18);
+  color: var(--brand-900);
+  font-weight: 600;
+}
+
+@media (min-width: 1024px) {
+  .site-header-inner {
+    max-width: 1200px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+  .site-nav {
+    grid-auto-rows: minmax(0, 1fr);
+  }
+  .site-nav a {
+    font-size: 1rem;
+  }
+}
+
+/* Team headshot consistency */
+.team-figure {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(15,23,42,0.05);
+  background: linear-gradient(180deg, rgba(241,245,249,1), rgba(226,232,240,0.9));
+}
+
+.team-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.team-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(226,232,240,1), rgba(203,213,225,0.9));
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+@supports not (aspect-ratio: 3 / 4) {
+  .team-figure::before {
+    content: "";
+    display: block;
+    padding-top: 133.333%;
+  }
+  .team-figure > * {
+    position: absolute;
+    inset: 0;
+  }
+}

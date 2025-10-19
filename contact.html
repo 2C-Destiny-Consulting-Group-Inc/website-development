@@ -6,6 +6,7 @@
   <title>Contact | 2-C Destiny Consulting Group</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <style>
     :root{--violet-900:#3b0764;--violet-700:#6d28d9;--violet-500:#7c3aed}
     .gradient-accent{
@@ -19,35 +20,26 @@
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased" data-page="contact">
 
-<!-- Header (canonical, matches index.html structure and placement) -->
-<header style="background: linear-gradient(180deg, rgba(91,33,182,0.04), rgba(139,92,246,0.02)); border-bottom:1px solid rgba(15,23,42,0.06);">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style="height:64px;display:flex;align-items:center;justify-content:space-between">
-    <a href="index.html" aria-label="2C Destiny Consulting Group" style="font-weight:700;color:var(--primary);text-decoration:none;font-size:1.05rem;letter-spacing:0.2px">2C DESTINY CONSULTING GROUP</a>
-    <nav aria-label="Primary" class="hidden md:flex items-center gap-6">
-      <a data-nav-page="about" href="about.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">About</a>
-      <a data-nav-page="team" href="meet-the-team.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Meet the team</a>
-      <a data-nav-page="pillars" href="pillars.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Pillars</a>
-      <a data-nav-page="programs" href="signature-programs.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Signature Programs</a>
-      <a data-nav-page="fatherhood" href="fatherhood.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Fatherhood</a>
-      <a data-nav-page="contact" href="contact.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Contact</a>
-      <a data-nav-page="donate" href="donate.html" class="text-sm text-gray-700 hover:text-[var(--primary)]">Donate</a>
-    </nav>
-    <div class="md:hidden">
-      <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-nav" class="p-2 rounded-md text-gray-700 hover:bg-gray-50">Menu</button>
-    </div>
-  </div>
-  <div id="mobile-nav" class="md:hidden hidden bg-white border-t border-gray-100">
-    <nav class="px-4 py-4 space-y-2">
-      <a href="about.html" class="block text-gray-700">About</a>
-      <a href="meet-the-team.html" class="block text-gray-700">Meet the team</a>
-      <a href="pillars.html" class="block text-gray-700">Pillars</a>
-      <a href="signature-programs.html" class="block text-gray-700">Signature Programs</a>
-      <a href="fatherhood.html" class="block text-gray-700">Fatherhood</a>
-      <a href="contact.html" class="block text-gray-700">Contact</a>
-      <a href="donate.html" class="block text-gray-700">Donate</a>
+<!-- Header -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="index.html" class="site-brand" aria-label="2C Destiny Consulting Group">
+      <span class="site-brand-icon" aria-hidden="true">
+        <img src="assets/2c-destiny-icon.svg" alt="" aria-hidden="true">
+      </span>
+      <span class="site-brand-text">2C Destiny Consulting Group</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary">
+      <a data-nav-page="about" href="about.html">About</a>
+      <a data-nav-page="team" href="meet-the-team.html">Meet the team</a>
+      <a data-nav-page="pillars" href="pillars.html">Pillars</a>
+      <a data-nav-page="programs" href="signature-programs.html">Signature Programs</a>
+      <a data-nav-page="fatherhood" href="fatherhood.html">Fatherhood</a>
+      <a data-nav-page="contact" href="contact.html">Contact</a>
+      <a data-nav-page="donate" href="donate.html">Donate</a>
     </nav>
   </div>
-</header>
+ </header>
 
 <!-- Hero -->
 <main>
@@ -166,7 +158,7 @@
         <ul class="space-y-2 text-sm text-slate-300">
           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
           <li><a href="fatherhood.html" class="hover:text-white transition-colors">Fatherhood</a></li>
-          <li><a href="programs.html" class="hover:text-white transition-colors">Programs</a></li>
+          <li><a href="signature-programs.html" class="hover:text-white transition-colors">Signature Programs</a></li>
           <li><a href="pillars.html" class="hover:text-white transition-colors">Pillars</a></li>
           <li><a href="meet-the-team.html" class="hover:text-white transition-colors">Team</a></li>
           <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
@@ -185,14 +177,13 @@
 </footer>
 
 <script>
-  // mobile menu toggle and active nav marking (same logic as index.html)
   (function(){
-    var toggle = document.getElementById('mobile-menu-toggle');
-    var mobileNav = document.getElementById('mobile-nav');
-    if(toggle && mobileNav){
-      toggle.addEventListener('click', function(){ mobileNav.classList.toggle('hidden'); toggle.setAttribute('aria-expanded', String(!mobileNav.classList.contains('hidden'))); });
-    }
-    try{ var page=document.body && document.body.getAttribute('data-page'); if(page){ var el=document.querySelector('a[data-nav-page="'+page+'"];'); if(!el){ el=document.querySelector('a[data-nav-page="'+page+'"]'); } if(el) el.classList.add('font-semibold'); } }catch(e){}
+    try{
+      var page=document.body&&document.body.getAttribute('data-page');
+      if(!page) return;
+      var el=document.querySelector('.site-nav a[data-nav-page="'+page+'"]');
+      if(el){ el.classList.add('active'); el.setAttribute('aria-current','page'); }
+    }catch(e){}
   })();
 </script>
 
