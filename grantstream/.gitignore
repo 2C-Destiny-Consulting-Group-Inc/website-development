@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# SQLite databases and backups
+*.db
+*.db-journal
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Misc
+.DS_Store
