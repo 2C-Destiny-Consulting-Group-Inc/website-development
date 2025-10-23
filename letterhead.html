@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2C Destiny Consulting Group Letterhead</title>
+  <style>
+    :root {
+      --brand-primary: #14213d;
+      --brand-secondary: #fca311;
+      --text-dark: #1f1f1f;
+      --text-muted: #5f6368;
+      --body-bg: #f5f7fa;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background: var(--body-bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding: 2.5rem;
+    }
+
+    .letterhead {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      box-shadow: 0 20px 40px rgba(20, 33, 61, 0.08);
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(20, 33, 61, 0.08);
+    }
+
+    header {
+      background: linear-gradient(135deg, rgba(20, 33, 61, 0.96), rgba(20, 33, 61, 0.8)), url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1400&q=80") center/cover;
+      color: #fff;
+      padding: 2.75rem 3.25rem;
+      position: relative;
+      display: grid;
+      gap: 1.75rem;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(20, 33, 61, 0.92), rgba(20, 33, 61, 0.65));
+      z-index: 0;
+    }
+
+    .brand-block,
+    .contact-block {
+      position: relative;
+      z-index: 1;
+    }
+
+    .brand-block h1 {
+      margin: 0;
+      font-size: 2.4rem;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      margin-top: 0.4rem;
+      font-size: 1rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .brand-tagline span {
+      white-space: nowrap;
+    }
+
+    .brand-tagline span:not(:last-child)::after {
+      content: "•";
+      margin-left: 0.75rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 10px;
+      background: rgba(252, 163, 17, 0.18);
+      color: var(--brand-secondary);
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    main {
+      padding: 2.75rem 3.25rem 3.5rem;
+      display: grid;
+      gap: 2.25rem;
+    }
+
+    .meta {
+      display: grid;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .meta span {
+      display: block;
+    }
+
+    .meta strong {
+      color: var(--text-dark);
+      font-weight: 600;
+    }
+
+    .subject-line {
+      border-left: 4px solid var(--brand-secondary);
+      padding-left: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--brand-primary);
+      font-size: 1rem;
+    }
+
+    .body-content {
+      display: grid;
+      gap: 1rem;
+      font-size: 1rem;
+      color: var(--text-dark);
+    }
+
+    footer {
+      background: rgba(20, 33, 61, 0.04);
+      padding: 1.4rem 3.25rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: center;
+    }
+
+    footer span {
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 720px) {
+      body {
+        padding: 1.25rem;
+      }
+
+      header,
+      main,
+      footer {
+        padding: 1.75rem;
+      }
+
+      .brand-block h1 {
+        font-size: 1.9rem;
+      }
+
+      .brand-tagline {
+        font-size: 0.85rem;
+        gap: 0.5rem;
+      }
+
+      .contact-block {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="letterhead">
+    <header>
+      <div class="brand-block">
+        <h1>2C Destiny Consulting Group</h1>
+        <div class="brand-tagline">
+          <span>Empowering Families</span>
+          <span>Restoring Fathers</span>
+          <span>Transforming Communities</span>
+        </div>
+      </div>
+      <div class="contact-block">
+        <div class="contact-item">
+          <span class="contact-icon">📧</span>
+          <span>info@2cdestiny.org</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <span>+1 (352) 480-9223</span>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📬</span>
+          <span>P.O. Box 772862, Ocala, FL 34477-2862</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="meta">
+        <span><strong>Date:</strong> [Date]</span>
+        <span><strong>To:</strong> [Recipient Name]</span>
+        <span><strong>Organization:</strong> [If applicable]</span>
+        <span><strong>Address:</strong> [Street Address]</span>
+        <span><strong>City, State ZIP:</strong> [City, State ZIP]</span>
+      </div>
+
+      <div class="subject-line">Subject: [Insert Subject]</div>
+
+      <div class="body-content">
+        <p>Dear [Recipient Name],</p>
+        <p>[Your message goes here.]</p>
+        <p>Sincerely,<br />[Your Name]<br />[Your Title]<br />2C Destiny Consulting Group</p>
+      </div>
+    </main>
+
+    <footer>
+      <span>Inspiring generational impact</span>
+    </footer>
+  </article>
+</body>
+</html>
