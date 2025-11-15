@@ -7,8 +7,10 @@
 # All language is strictly based on the user's provided Theory of Change and budget narrative.
 # No new statistics or claims beyond those documents.
 
+from pathlib import Path
+
 from docx import Document
-from docx.shared import Pt, Inches
+from docx.shared import Pt
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
@@ -75,8 +77,12 @@ budget_items = {
     "Accounting Services": "$9,750"
 }
 
+# ---------------------- Output directory ----------------------
+OUTPUT_DIR = Path(__file__).resolve().parent / "launch-kit-output"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
 # ---------------------- 1) Press Announcement (DOCX) ----------------------
-press_path = "/mnt/data/Press_Announcement_2C_Destiny_Fatherhood_Initiative.docx"
+press_path = OUTPUT_DIR / "Press_Announcement_2C_Destiny_Fatherhood_Initiative.docx"
 doc = Document()
 doc.styles['Normal'].font.name = 'Calibri'
 doc.styles['Normal'].font.size = Pt(11)
@@ -122,10 +128,10 @@ doc.add_paragraph(
 
 doc.add_paragraph("\nAbout 2C Destiny Consulting Group, Inc.\n2C Destiny equips fathers and families through culturally relevant, faith-rooted, and trauma-informed programming with transparent evaluation baked in.\n")
 
-doc.save(press_path)
+doc.save(str(press_path))
 
 # ---------------------- 2) Outreach Emails (DOCX) ----------------------
-emails_path = "/mnt/data/Outreach_Emails_2C_Destiny_Fatherhood_Initiative.docx"
+emails_path = OUTPUT_DIR / "Outreach_Emails_2C_Destiny_Fatherhood_Initiative.docx"
 em = Document()
 em.styles['Normal'].font.name = 'Calibri'
 em.styles['Normal'].font.size = Pt(11)
@@ -166,10 +172,10 @@ em.add_paragraph(
     "Thank you,\n[Your Name]\n[Title], 2C Destiny Consulting Group, Inc.\ninfo@2cdestiny.org"
 )
 
-em.save(emails_path)
+em.save(str(emails_path))
 
 # ---------------------- 3) Social Snippets (TXT) ----------------------
-social_path = "/mnt/data/Social_Snippets_2C_Destiny_Fatherhood_Initiative.txt"
+social_path = OUTPUT_DIR / "Social_Snippets_2C_Destiny_Fatherhood_Initiative.txt"
 social_text = f"""
 SHORT SOCIAL COPY (use on any platform)
 
@@ -197,8 +203,8 @@ with open(social_path, "w", encoding="utf-8") as f:
     f.write(social_text.strip())
 
 # ---------------------- 4) Funding Unlocks One-Pager (PDF) ----------------------
-pdf_path = "/mnt/data/Funding_Unlocks_OnePager_2C_Destiny_Fatherhood_Initiative.pdf"
-c = canvas.Canvas(pdf_path, pagesize=letter)
+pdf_path = OUTPUT_DIR / "Funding_Unlocks_OnePager_2C_Destiny_Fatherhood_Initiative.pdf"
+c = canvas.Canvas(str(pdf_path), pagesize=letter)
 width, height = letter
 
 def draw_wrapped(c, text, x, y, max_width, font="Helvetica", size=11, leading=14):
@@ -276,9 +282,14 @@ y = draw_wrapped(c, "Sponsor a session or a mentor–mentee activity. Provide tr
 
 c.save()
 
-{
+generated_files = {
     "press_docx": press_path,
     "emails_docx": emails_path,
     "social_txt": social_path,
     "funding_pdf": pdf_path
 }
+
+if __name__ == "__main__":
+    print(f"Launch Kit files saved to: {OUTPUT_DIR}")
+    for label, path in generated_files.items():
+        print(f"- {label}: {path}")
