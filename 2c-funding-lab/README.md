@@ -2,6 +2,36 @@
 
 A full-stack application for managing funding opportunities and applications, built for 2C Destiny Consulting Group, Inc.
 
+## 🚀 Quick Start (For Beginners)
+
+**New to coding?** Start here:
+
+👉 **[Complete Beginner's Guide](GETTING-STARTED.md)** - Step-by-step instructions with troubleshooting
+
+### Easy Start Scripts
+
+**On Mac/Linux:**
+```bash
+cd 2c-funding-lab
+./start-easy.sh
+```
+
+**On Windows:**
+```bash
+cd 2c-funding-lab
+start-easy.bat
+```
+
+These scripts will:
+1. ✓ Check if you have Python and Node.js installed
+2. ✓ Install all required packages automatically
+3. ✓ Start both backend and frontend servers
+4. ✓ Open the application in your browser
+
+**Then visit:** http://localhost:3000
+
+---
+
 ## Project Structure
 
 ```
